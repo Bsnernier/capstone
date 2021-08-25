@@ -21,5 +21,5 @@ def seed_games():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_games():
-    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE games RESTART IDENTITY CASCADE;')
     db.session.commit()

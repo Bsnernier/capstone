@@ -1,6 +1,9 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from sqlalchemy.orm import relationship
+from .review import Review
+from .library import Library
 
 
 class User(db.Model, UserMixin):
@@ -10,6 +13,9 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+
+    reviews = relationship("Review", order_by=Review.id, back_populates="user", uselist=False)
+    libraries = relationship("Library", order_by=Library.id, back_populates="user", uselist=False)
 
     @property
     def password(self):
