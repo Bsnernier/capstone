@@ -4,25 +4,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { getOneGame } from "../store/game";
 
 function Game() {
-  const [game, setGame] = useState();
+  const [games, setGames] = useState();
+  const [gameIds, setGameIds] = useState();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(getOneGame());
     (async () => {
       let test = await dispatch(getOneGame());
-      setGame(test.games[0][1]);
-      console.log("asdfgggggdddddddddddddddddddddddddddd", game);
+      setGames(test.games);
+      if (games) {
+        // setGameIds(Object?.keys(games));
+        // console.log("valuesssssssss", Object?.values(games[0]));
+      }
     })();
   }, [dispatch]);
 
+  console.log("games >>>>>>>>>>>>>>>>>>>>>>>>>>>>", games);
+  console.log("gameIds >>>>>>>>>>>>>>>>>>>>>>>>>>", gameIds);
+
   return (
     <div>
-      <div>{game?.title}</div>
-      <div>{game?.summary}</div>
-      <div>{game?.description}</div>
-      <img src={game?.cover_url} alt_text="uh oh" />
+      {games?.map((game) => (
+        <div>
+          <img src={game?.cover_url} alt_text="uh oh" />
+          <div>{game?.title}</div>
+        </div>
+      ))}
     </div>
   );
 }

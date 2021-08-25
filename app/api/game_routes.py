@@ -9,4 +9,6 @@ game_routes = Blueprint('games', __name__)
 @login_required
 def games():
     games = Game.query.all()
-    return {'games': [{game.id: game.to_dict()} for game in games]}
+    test = {'games': [game.to_dict() for game in games]}
+    print(test)
+    return test
