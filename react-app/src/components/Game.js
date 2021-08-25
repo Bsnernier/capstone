@@ -7,40 +7,23 @@ function Game() {
   const [game, setGame] = useState();
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.session.user);
-
-  console.log("userrrrrrrrrrrrrrrrr", user);
 
   useEffect(() => {
+    // dispatch(getOneGame());
     (async () => {
       let test = await dispatch(getOneGame());
-      setGame(test);
-      console.log("asdfgggggdddddddddddddddddddddddddddd", test);
+      setGame(test.games[0][1]);
+      console.log("asdfgggggdddddddddddddddddddddddddddd", game);
     })();
-  }, [dispatch, game]);
-
-  // console.log("asdfgggggdddddddddddddddddddddddddddd");
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await fetch(`/api/games`);
-  //     const game = await response.json();
-  //     console.log(game);
-  //   })();
-  // }, []);
+  }, [dispatch]);
 
   return (
-    <ul>
-      <li>
-        <strong>User Id</strong> {game}
-      </li>
-      <li>
-        <strong>Username</strong>
-      </li>
-      <li>
-        <strong>Email</strong>
-      </li>
-    </ul>
+    <div>
+      <div>{game.title}</div>
+      <div>{game.summary}</div>
+      <div>{game.description}</div>
+      <img src={game.cover_url} alt_text="uh oh" />
+    </div>
   );
 }
 export default Game;

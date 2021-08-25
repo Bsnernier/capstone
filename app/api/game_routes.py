@@ -8,6 +8,5 @@ game_routes = Blueprint('games', __name__)
 @game_routes.route('/')
 @login_required
 def games():
-    game = db.session.query(Game).all()
-    print(game)
-    return 'Hello'
+    games = Game.query.all()
+    return {'games': [{game.id: game.to_dict()} for game in games]}

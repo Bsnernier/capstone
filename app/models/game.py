@@ -15,3 +15,13 @@ class Game(db.Model):
 
     reviews = relationship("Review", order_by=Review.id, back_populates="game", uselist=False)
     libraries = relationship("Library", order_by=Library.id, back_populates="game", uselist=False)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'genre': self.genre,
+            'cover_url': self.cover_url,
+            'description': self.description,
+            'summary': self.summary
+        }
