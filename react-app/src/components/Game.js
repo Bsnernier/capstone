@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getOneGame } from "../store/game";
+import { getAllGames } from "../store/game";
 
 function Game() {
   const [games, setGames] = useState();
@@ -11,7 +11,7 @@ function Game() {
 
   useEffect(() => {
     (async () => {
-      let test = await dispatch(getOneGame());
+      let test = await dispatch(getAllGames());
       setGames(test.games);
       if (games) {
         // setGameIds(Object?.keys(games));

@@ -7,8 +7,22 @@ const getGame = (game) => ({
 
 const initialState = { game: null };
 
-export const getOneGame = () => async (dispatch) => {
+export const getAllGames = () => async (dispatch) => {
   const res = await fetch("/api/games/");
+
+  if (res.ok) {
+    const data = await res.json();
+    console.log("res is ok --------------------", data);
+    dispatch(getGame(data));
+    return data;
+  } else {
+    console.log("res not ok <<<<<<<<<<<<<<<<<<<<<<<", res);
+  }
+};
+
+export const getOneGame = (id) => async (dispatch) => {
+  const res = await fetch(`/api/games/${id}`);
+  console.log(id);
 
   if (res.ok) {
     const data = await res.json();
