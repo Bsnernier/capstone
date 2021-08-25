@@ -19,10 +19,10 @@ function Game() {
 
   return (
     <div>
-      <div>{game.title}</div>
-      <div>{game.summary}</div>
-      <div>{game.description}</div>
-      <img src={game.cover_url} alt_text="uh oh" />
+      <div>{game?.title}</div>
+      <div>{game?.summary}</div>
+      <div>{game?.description}</div>
+      <img src={game?.cover_url} alt_text="uh oh" />
     </div>
   );
 }

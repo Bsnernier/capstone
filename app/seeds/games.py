@@ -6,7 +6,7 @@ def seed_games():
     demo = Game(
         title='The Demo Game',
         genre=12,
-        cover_url='https://images.igdb.com/igdb/image/upload/t_thumb/co1wyy.jpg',
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg',
         description='This is the description of The Demo Game',
         summary='This is the summary of The Demo Game')
 
