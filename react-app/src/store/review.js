@@ -29,11 +29,8 @@ export const getAllReviewsPerGame = (id) => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("res is ok --------------------", data);
     dispatch(getReview(data));
     return data;
-  } else {
-    console.log("res not ok <<<<<<<<<<<<<<<<<<<<<<<", res);
   }
 };
 
@@ -51,7 +48,6 @@ export const createOneReview = (id, text, rating) => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("res is ok --------------------", data);
     dispatch(createReview(data));
     return null;
   } else if (res.status < 500) {
@@ -77,7 +73,6 @@ export const editReview = (id, text, rating) => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("res is ok --------------------", data);
     dispatch(updateReview(data));
     return null;
   } else if (res.status < 500) {
@@ -93,7 +88,6 @@ export const editReview = (id, text, rating) => async (dispatch) => {
 export const eraseReview = (id) => async (dispatch) => {
   let formData = new FormData();
   formData.append("reviewId", id);
-  console.log(">>>>>>>>>>>>>>>>>>>>>>>", id);
 
   const res = await fetch(`/api/reviews/game/${id}/delete`, {
     method: "POST",
@@ -102,7 +96,6 @@ export const eraseReview = (id) => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("dataaaaaaaaaaaaaaaaaaaaaaaa", data);
     dispatch(deleteReview(data));
     return null;
   } else if (res.status < 500) {
