@@ -1,0 +1,75 @@
+.game {
+  position: absolute;
+  border: 5px solid black;
+  background-color: rgb(90, 79, 94);
+  display: flex;
+  width: 98%;
+  font-size: 20px;
+}
+
+.game_cover {
+  margin: 20px;
+  border: 5px solid black;
+}
+
+.game_title {
+  font-size: 30px;
+  position: absolute;
+  background-color: rgb(90, 79, 94);
+  left: 350px;
+  top: 20px;
+}
+
+.game_date {
+  background-color: rgb(90, 79, 94);
+  position: absolute;
+  left: 350px;
+  top: 60px;
+}
+
+.game_genre {
+  background-color: rgb(90, 79, 94);
+  position: absolute;
+  left: 350px;
+  top: 90px;
+}
+
+.game_platforms {
+  background-color: rgb(90, 79, 94);
+  position: absolute;
+  left: 350px;
+  top: 120px;
+}
+
+.game_storyline {
+  background-color: rgb(90, 79, 94);
+  position: absolute;
+  left: 350px;
+  top: 150px;
+}
+
+.game_summary {
+  background-color: rgb(90, 79, 94);
+  position: absolute;
+  left: 350px;
+  top: 250px;
+}
+
+.review {
+  background-color: rgb(90, 79, 94);
+  position: relative;
+  top: 650px;
+  left: 50%;
+  float: left;
+}
+
+.review_container {
+  position: relative;
+  left: -50%;
+  float: left;
+  display: flex;
+}
+
+.review_component {
+  background-color: rgb(90, 79, 94);
+}

@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Game from "./components/Game";
+import Games from "./components/Games";
 import OneGame from "./components/OneGame";
 import { authenticate } from "./store/session";
 
@@ -40,7 +40,7 @@ function App() {
           <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path="/games" exact={true}>
-          <Game />
+          <Games />
         </ProtectedRoute>
         <ProtectedRoute path="/games/:gameId" exact={true}>
           <OneGame />

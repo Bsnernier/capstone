@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { getAllGames } from "../store/game";
+import { getAllGames } from "../../store/game";
 
-function Game() {
+import "./Games.css";
+
+function Games() {
   const [games, setGames] = useState();
 
   const dispatch = useDispatch();
@@ -26,4 +28,4 @@ function Game() {
     </div>
   );
 }
-export default Game;
+export default Games;
