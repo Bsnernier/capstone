@@ -20,7 +20,6 @@ app = Flask(__name__)
 # Setup login manager
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
-# print(login.login_view)
 
 
 @login.user_loader

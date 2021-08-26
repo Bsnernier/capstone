@@ -16,7 +16,6 @@ const ReviewEditForm = ({ review, hideForm }) => {
     e.preventDefault();
     setText(review?.text);
     setRating(review?.rating);
-    console.log("edit stufffffffffffffffff", review?.id, text, rating);
     const data = await dispatch(editReview(review?.id, text, rating));
     if (data) {
       setErrors(data);

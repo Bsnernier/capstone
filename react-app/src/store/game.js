@@ -12,11 +12,8 @@ export const getAllGames = () => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("res is ok --------------------", data);
     dispatch(getGame(data));
     return data;
-  } else {
-    console.log("res not ok <<<<<<<<<<<<<<<<<<<<<<<", res);
   }
 };
 
@@ -25,11 +22,8 @@ export const getOneGame = (id) => async (dispatch) => {
 
   if (res.ok) {
     const data = await res.json();
-    console.log("res is ok --------------------", data);
     dispatch(getGame(data));
     return data;
-  } else {
-    console.log("res not ok <<<<<<<<<<<<<<<<<<<<<<<", res);
   }
 };
 
