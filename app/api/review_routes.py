@@ -8,6 +8,5 @@ review_routes = Blueprint('reviews', __name__)
 @review_routes.route('/game/<int:id>')
 @login_required
 def get_reviews(id):
-    reviews = Review.query.get(id)
-    print('here it tis.......................',reviews.to_dict())
-    return {reviews.id: reviews.to_dict()}
+    reviews = Review.query.filter_by(gameId=id).all()
+    return {'reviews': [review.to_dict() for review in reviews]}

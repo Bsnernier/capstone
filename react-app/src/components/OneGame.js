@@ -8,7 +8,6 @@ import { getOneGame } from "../store/game";
 
 function OneGame() {
   const [game, setGame] = useState();
-  const [releaseDate, setReleaseDate] = useState();
 
   const dispatch = useDispatch();
   let { gameId } = useParams();
@@ -18,7 +17,7 @@ function OneGame() {
       let test = await dispatch(getOneGame(gameId));
       setGame(test[gameId]);
     })();
-  }, [dispatch]);
+  }, [dispatch, gameId]);
 
   const toDateTime = (seconds) => {
     let time = new Date(1970, 0, 1);
@@ -33,7 +32,7 @@ function OneGame() {
 
   return (
     <div>
-      <img src={game?.cover_url} alt_text="uh oh" />
+      <img src={game?.cover_url} alt="uh oh" />
       <div>{toDateTime(game?.first_release_date)}</div>
       <div>{game?.title}</div>
       <div>{game?.genre}</div>

@@ -9,7 +9,6 @@ const initialState = { review: null };
 
 export const getAllReviewsPerGame = (id) => async (dispatch) => {
   const res = await fetch(`/api/reviews/game/${id}`);
-  console.log(id);
 
   if (res.ok) {
     const data = await res.json();

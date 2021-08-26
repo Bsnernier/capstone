@@ -7,19 +7,23 @@ function Review(props) {
   const [reviews, setReviews] = useState();
 
   const dispatch = useDispatch();
-  console.log("gameIdddddddddddddddddddd", props.gameId);
 
   useEffect(() => {
     (async () => {
       let test = await dispatch(getAllReviewsPerGame(props.gameId));
-      setReviews(test);
+      setReviews(test.reviews);
     })();
-  }, [dispatch]);
+  }, [dispatch, props.gameId]);
 
-  if (reviews) {
-    console.log("reviewwwwwwwwsssssssssssssssssss", reviews);
-  }
-
-  return <div>Hello</div>;
+  return (
+    <div>
+      {reviews?.map((review) => (
+        <div key={review?.id}>
+          <div>{review?.text}</div>
+          <div>{review?.rating}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 export default Review;
