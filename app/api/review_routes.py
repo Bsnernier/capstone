@@ -40,3 +40,26 @@ def create_review(id):
         db.session.commit()
         return review.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@review_routes.route('/game/<int:id>/edit', methods=["POST"])
+@login_required
+def update_review():
+    reviewId = request.form['reviewId']
+    text = request.form['text']
+    rating = request.form['rating']
+
+    review = Review.query.get(reviewId)
+    review.text = text
+    review.rating = rating
+    db.session.commit()
+    return {"Successful": "Update!"}
+
+@review_routes.route('/game/<int:id>/delete', methods=["POST"])
+@login_required
+def delete_review(id):
+    reviewId = request.form['reviewId']
+    review = Review.query.get(reviewId)
+
+    db.session.delete(review)
+    db.session.commit()
+    return {"Successful": "Delete!"}
