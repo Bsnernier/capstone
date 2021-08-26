@@ -7,10 +7,13 @@ class Game(db.Model):
     __tablename__ = 'games'
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(70), nullable=False, unique=True)
-    genre = db.Column(db.String(20), nullable=False)
+    igdbId = db.Column(db.Integer, nullable=False)
     cover_url = db.Column(db.String(255), nullable=False)
-    description = db.Column(db.String(255), nullable=False)
+    first_release_date = db.Column(db.Integer, nullable=False)
+    genre = db.Column(db.String(255), nullable=False)
+    title = db.Column(db.String(70), nullable=False, unique=True)
+    platforms = db.Column(db.String(255), nullable=False)
+    storyline = db.Column(db.String(255), nullable=False)
     summary = db.Column(db.String(255), nullable=False)
 
     reviews = relationship("Review", order_by=Review.id, back_populates="game", uselist=False)
@@ -19,9 +22,12 @@ class Game(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'title': self.title,
-            'genre': self.genre,
+            'igdbId': self.igdbId,
             'cover_url': self.cover_url,
-            'description': self.description,
+            'first_release_date': self.first_release_date,
+            'genre': self.genre,
+            'title': self.title,
+            'platforms': self.platforms,
+            'storyline': self.storyline,
             'summary': self.summary
         }

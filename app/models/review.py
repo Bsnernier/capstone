@@ -13,3 +13,12 @@ class Review(db.Model):
 
     game = relationship("Game", back_populates="reviews")
     user = relationship("User", back_populates="reviews")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'gameId': self.gameId,
+            'text': self.text,
+            'rating': self.rating,
+        }

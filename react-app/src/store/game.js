@@ -22,7 +22,6 @@ export const getAllGames = () => async (dispatch) => {
 
 export const getOneGame = (id) => async (dispatch) => {
   const res = await fetch(`/api/games/${id}`);
-  console.log(id);
 
   if (res.ok) {
     const data = await res.json();

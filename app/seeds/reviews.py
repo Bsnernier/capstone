@@ -6,10 +6,22 @@ def seed_reviews():
     demo = Review(
         userId=2,
         gameId=1,
-        text='Good Game',
+        text='Great Game',
+        rating=5)
+    risk = Review(
+        userId=1,
+        gameId=2,
+        text='Okay Game',
         rating=3)
+    wich = Review(
+        userId=1,
+        gameId=1,
+        text='Bad Game',
+        rating=1)
 
     db.session.add(demo)
+    db.session.add(risk)
+    db.session.add(wich)
 
     db.session.commit()
 

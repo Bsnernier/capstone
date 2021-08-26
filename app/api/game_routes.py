@@ -15,5 +15,4 @@ def get_games():
 @login_required
 def get_one_game(id):
     game = Game.query.get(id)
-    print('here it tis.......................',game.to_dict())
     return {game.id: game.to_dict()}

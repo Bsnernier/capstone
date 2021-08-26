@@ -4,16 +4,22 @@ from app.models import db, Game
 # Adds a demo user, you can add other users here if you want
 def seed_games():
     demo = Game(
-        title='The Demo Game',
-        genre=12,
+        igdbId=1942,
         cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg',
-        description='This is the description of The Demo Game',
-        summary='This is the summary of The Demo Game')
+        first_release_date=1431993600,
+        genre="Role-playing (RPG),Adventure",
+        title='The Demo Game',
+        platforms="PC,PS4,Xbox One,Nintendo Switch",
+        storyline="The Witcher 3: Wild Hunt concludes the story of the witcher Geralt of Rivia, the series' protagonist, whose story to date has been covered in the previous installments.",
+        summary='RPG and sequel to The Witcher 2 (2011), The Witcher 3 follows witcher Geralt of Rivia as he seeks out his former lover and his young subject while intermingling with the political workings of the wartorn Northern Kingdoms.',)
     risk = Game(
-        title='Risk of Rain 2',
-        genre=5,
+        igdbId=28512,
         cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co2eu7.jpg',
-        description="Risk of Rain 2 follows the crew of UES : Safe Travels as they try to find UES : Contact Light and any survivors along their path.",
+        first_release_date=1553731200,
+        genre="Shooter,Indie",
+        title='Risk of Rain 2',
+        platforms="PC,PS4,Xbox One,Nintendo Switch,Google Stadia",
+        storyline="Risk of Rain 2 follows the crew of UES : Safe Travels as they try to find UES : Contact Light and any survivors along their path.",
         summary="The classic multiplayer roguelike, Risk of Rain, returns with an extra dimension and more challenging action.")
 
     db.session.add(demo)
