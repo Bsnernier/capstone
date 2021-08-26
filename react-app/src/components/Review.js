@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 
-import { getOneGame } from "../store/game";
+import { getAllReviewsPerGame } from "../store/review";
 
-function Review() {
-  const [game, setGame] = useState();
+function Review(props) {
+  const [reviews, setReviews] = useState();
 
   const dispatch = useDispatch();
-  let { gameId } = useParams();
-  console.log("gameIdddddddddddddddddddd", gameId);
+  console.log("gameIdddddddddddddddddddd", props.gameId);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     let test = await dispatch(getReview(gameId));
-  //     setGame(test[gameId]);
-  //   })();
-  // }, [dispatch]);
+  useEffect(() => {
+    (async () => {
+      let test = await dispatch(getAllReviewsPerGame(props.gameId));
+      setReviews(test);
+    })();
+  }, [dispatch]);
 
-  // if (game) console.log("games >>>>>>>>>>>>>>>>>>>>>>>>>>>>", game);
+  if (reviews) {
+    console.log("reviewwwwwwwwsssssssssssssssssss", reviews);
+  }
 
   return <div>Hello</div>;
 }
