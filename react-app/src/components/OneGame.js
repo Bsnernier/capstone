@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import Review from "./Review";
+import ReviewForm from "./ReviewForm";
 
 import { getOneGame } from "../store/game";
 
@@ -40,6 +41,7 @@ function OneGame() {
       <div>{game?.storyline}</div>
       <div>{game?.summary}</div>
       <Review gameId={gameId} />
+      <ReviewForm gameId={gameId} />
     </div>
   );
 }
