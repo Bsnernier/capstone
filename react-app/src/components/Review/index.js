@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getAllReviewsPerGame } from "../store/review";
-import ReviewEditForm from "./ReviewEditForm";
-import ReviewDelete from "./ReviewDelete";
+import { getAllReviewsPerGame } from "../../store/review";
+import ReviewEditForm from "../ReviewEditForm";
+import ReviewDelete from "../ReviewDelete";
+
+import "./Review.css";
 
 function Review(props) {
   const [reviews, setReviews] = useState();
@@ -53,11 +55,11 @@ function Review(props) {
   };
 
   return (
-    <div>
+    <div className="review">
       {reviews?.map((review) => (
-        <div key={review?.id}>
-          <div>{review?.text}</div>
-          <div>{review?.rating}</div>
+        <div className="review_content" key={review?.id}>
+          <div className="review_text">{review?.text}</div>
+          <div className="review_rating">{review?.rating}</div>
           {showButton(review?.userId, review?.id)}
           {editButton}
           {deleteButton}

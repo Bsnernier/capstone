@@ -1,0 +1,15 @@
+.review {
+  border: 5px solid black;
+}
+
+.review_text {
+  border: 5px solid blue;
+}
+
+.review_rating {
+  border: 5px solid red;
+}
+
+.review_content {
+  border: 5px solid green;
+}
