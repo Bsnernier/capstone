@@ -43,7 +43,7 @@ def create_review(id):
 
 @review_routes.route('/game/<int:id>/edit', methods=["POST"])
 @login_required
-def update_review():
+def update_review(id):
     reviewId = request.form['reviewId']
     text = request.form['text']
     rating = request.form['rating']
