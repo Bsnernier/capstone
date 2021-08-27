@@ -21,4 +21,5 @@ class Review(db.Model):
             'gameId': self.gameId,
             'text': self.text,
             'rating': self.rating,
+            'username': self.user.username
         }

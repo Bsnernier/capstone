@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import db, Review
+from app.models import db, Review, User
 from app.forms import ReviewForm
 
 review_routes = Blueprint('reviews', __name__)
@@ -20,7 +20,8 @@ def validation_errors_to_error_messages(validation_errors):
 @review_routes.route('/game/<int:id>')
 @login_required
 def get_reviews(id):
-    reviews = Review.query.filter_by(gameId=id).all()
+    # reviews = Review.query.filter_by(gameId=id).order_by(Review.id.desc()).join(User).all()
+    reviews = Review.query.filter_by(gameId=id).order_by(Review.id.desc()).all()
     return {'reviews': [review.to_dict() for review in reviews]}
 
 
