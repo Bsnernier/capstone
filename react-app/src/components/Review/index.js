@@ -58,6 +58,7 @@ function Review(props) {
     <div className="review">
       {reviews?.map((review) => (
         <div className="review_content" key={review?.id}>
+          <div className="review_username">{review?.username}</div>
           <div className="review_text">{review?.text}</div>
           <div className="review_rating">{review?.rating}</div>
           {showButton(review?.userId, review?.id)}
