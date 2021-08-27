@@ -55,21 +55,17 @@
   top: 250px;
 }
 
-.review {
-  background-color: rgb(90, 79, 94);
+.game_review {
   position: relative;
   top: 650px;
   left: 50%;
   float: left;
 }
 
-.review_container {
+.game_review_container {
   position: relative;
   left: -50%;
   float: left;
   display: flex;
-}
-
-.review_component {
-  background-color: rgb(90, 79, 94);
+  flex-direction: column;
 }

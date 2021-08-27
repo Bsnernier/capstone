@@ -50,10 +50,10 @@ function OneGame() {
         </div>
         <div className="game_summary game_text">Summary: {game?.summary}</div>
       </div>
-      <div className="review">
-        <div className="review_container">
-          <Review className="review_component" gameId={gameId} />
-          <ReviewForm className="review_form" gameId={gameId} />
+      <div className="game_review">
+        <div className="game_review_container">
+          <Review className="game_review_component" gameId={gameId} />
+          <ReviewForm className="game_review_form" gameId={gameId} />
         </div>
       </div>
     </div>
