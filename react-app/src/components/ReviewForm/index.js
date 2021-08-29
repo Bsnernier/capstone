@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
-import { editReview } from "../store/review";
+import { createOneReview } from "../../store/review";
 
-const ReviewEditForm = ({ review, hideForm }) => {
+import "./ReviewForm.css";
+
+const ReviewForm = () => {
   const [errors, setErrors] = useState([]);
   const [text, setText] = useState("");
   const [rating, setRating] = useState();
@@ -12,15 +14,15 @@ const ReviewEditForm = ({ review, hideForm }) => {
   let { gameId } = useParams();
   const history = useHistory();
 
-  const submitEditReview = async (e) => {
+  const submitReview = async (e) => {
     e.preventDefault();
-    setText(review?.text);
-    setRating(review?.rating);
-    const data = await dispatch(editReview(review?.id, text, rating));
+    const data = await dispatch(createOneReview(gameId, text, rating));
     if (data) {
       setErrors(data);
+      return;
     }
-    hideForm();
+    history.push("/");
+    history.push(`/games/${gameId}`);
   };
 
   const updateText = (e) => {
@@ -32,27 +34,33 @@ const ReviewEditForm = ({ review, hideForm }) => {
   };
 
   return (
-    <form onSubmit={submitEditReview}>
+    <form className="review_form" onSubmit={submitReview}>
       <div>
         {errors?.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
       <div>
-        <label htmlFor="text">Edit</label>
+        <label className="review_text_label" htmlFor="text">
+          Write a Review
+        </label>
         <input
           name="text"
           type="text"
-          placeholder="Write here"
+          className="review_text_input"
+          placeholder="Leave your review here."
           value={text}
           onChange={updateText}
         />
       </div>
-      <div>
-        <label htmlFor="rating">Rating</label>
+      <div className="review_form_rating">
+        <label className="review_rating_label" htmlFor="rating">
+          Rating
+        </label>
         <select
           name="rating"
           type="select"
+          className="review_rating_input"
           placeholder="Should be Select"
           value={rating}
           onChange={updateRating}
@@ -64,10 +72,12 @@ const ReviewEditForm = ({ review, hideForm }) => {
           <option>4</option>
           <option>5</option>
         </select>
-        <button type="submit">Update</button>
+        <button className="review_submit" type="submit">
+          Create
+        </button>
       </div>
     </form>
   );
 };
 
-export default ReviewEditForm;
+export default ReviewForm;

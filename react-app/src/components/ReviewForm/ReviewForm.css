@@ -1,0 +1,37 @@
+.review_form {
+  border: 5px solid black;
+  padding: 5px;
+  background-color: rgb(90, 79, 94);
+}
+
+.review_form_rating {
+  background-color: rgb(47, 41, 49);
+}
+
+.review_rating_label {
+  background-color: rgb(47, 41, 49);
+  font-size: 18px;
+  margin: 3px;
+}
+
+.review_text_label {
+  font-size: 18px;
+  padding-left: 3px;
+}
+
+.review_text_input {
+  width: 99%;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.review_rating_input {
+  background-color: rgb(90, 79, 94);
+  margin: 3px;
+}
+
+.review_submit {
+  background-color: rgb(90, 79, 94);
+  margin: 3px;
+}

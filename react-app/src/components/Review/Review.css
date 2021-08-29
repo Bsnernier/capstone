@@ -1,15 +1,39 @@
 .review {
   border: 5px solid black;
-}
-
-.review_text {
-  border: 5px solid blue;
+  width: 1000px;
 }
 
 .review_rating {
-  border: 5px solid red;
+  background-color: rgb(47, 41, 49);
 }
 
 .review_content {
-  border: 5px solid green;
+  border: 5px solid rgb(90, 79, 94);
+  padding: 5px;
+}
+
+.review_username {
+  width: auto;
+  font-size: 25px;
+}
+
+.review_text {
+  /* border: 5px solid blue; */
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.review_user_rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review_buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px;
+}
+
+.review_button {
+  background-color: rgb(90, 79, 94);
 }

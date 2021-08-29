@@ -1,7 +1,12 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError
+
+def max_length(form, field):
+    text = field.data
+    if len(text) > 255:
+        raise ValidationError(f"Your review has {len(text)} characters. Please shorten to under 255")
 
 class ReviewForm(FlaskForm):
-    text = StringField('text', validators=[DataRequired()])
+    text = StringField('text', validators=[DataRequired(), max_length])
     rating = SelectField('rating', choices=['',1,2,3,4,5], validators=[DataRequired()])

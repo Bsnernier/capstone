@@ -31,6 +31,7 @@ function Review(props) {
     if (user?.id === reviewUserId) {
       editButton = (
         <button
+          className="review_button"
           onClick={(e) => {
             setEditFormDisplay(e.target.id);
           }}
@@ -58,12 +59,17 @@ function Review(props) {
     <div className="review">
       {reviews?.map((review) => (
         <div className="review_content" key={review?.id}>
-          <div className="review_username">{review?.username}</div>
+          <div className="review_user_rating">
+            <div className="review_username">{review?.username}</div>
+            <div className="review_rating">Rating: {review?.rating}</div>
+          </div>
           <div className="review_text">{review?.text}</div>
-          <div className="review_rating">{review?.rating}</div>
-          {showButton(review?.userId, review?.id)}
-          {editButton}
-          {deleteButton}
+          <div className="review_buttons">
+            {showButton(review?.userId, review?.id)}
+            {editButton}
+            {deleteButton}
+            {/* {showEditContent(review, review?.id)} */}
+          </div>
           {showEditContent(review, review?.id)}
         </div>
       ))}
