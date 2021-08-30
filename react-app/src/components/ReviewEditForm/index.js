@@ -14,10 +14,13 @@ const ReviewEditForm = ({ review, hideForm }) => {
   let { gameId } = useParams();
   const history = useHistory();
 
+  // useEffect(() => {
+  //   setText(review?.text);
+  //   setRating(review?.rating);
+  // }, []);
+
   const submitEditReview = async (e) => {
     e.preventDefault();
-    setText(review?.text);
-    setRating(review?.rating);
     const data = await dispatch(editReview(review?.id, text, rating));
     if (data) {
       setErrors(data);
