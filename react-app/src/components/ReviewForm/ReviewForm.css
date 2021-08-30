@@ -35,3 +35,11 @@
   background-color: rgb(90, 79, 94);
   margin: 3px;
 }
+
+.error_map {
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+}

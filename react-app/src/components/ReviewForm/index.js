@@ -7,7 +7,7 @@ import "./ReviewForm.css";
 
 const ReviewForm = () => {
   const [errors, setErrors] = useState([]);
-  const [text, setText] = useState("");
+  const [text, setText] = useState();
   const [rating, setRating] = useState();
 
   const dispatch = useDispatch();
@@ -16,11 +16,22 @@ const ReviewForm = () => {
 
   const submitReview = async (e) => {
     e.preventDefault();
+    if (!text && !rating) {
+      setErrors(["Please write a review and leave a rating before submitting"]);
+      return;
+    } else if (!text && rating) {
+      setErrors(["Please write a review for your rating"]);
+      return;
+    } else if (text && !rating) {
+      setErrors(["Please leave a rating with your review"]);
+      return;
+    }
     const data = await dispatch(createOneReview(gameId, text, rating));
     if (data) {
       setErrors(data);
       return;
     }
+    console.log(errors);
     history.push("/");
     history.push(`/games/${gameId}`);
   };
@@ -35,9 +46,11 @@ const ReviewForm = () => {
 
   return (
     <form className="review_form" onSubmit={submitReview}>
-      <div>
+      <div className="error_map">
         {errors?.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div key={ind} className="error">
+            {error}
+          </div>
         ))}
       </div>
       <div>

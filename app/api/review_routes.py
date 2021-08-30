@@ -13,7 +13,7 @@ def validation_errors_to_error_messages(validation_errors):
     errorMessages = []
     for field in validation_errors:
         for error in validation_errors[field]:
-            errorMessages.append(f'{field} : {error}')
+            errorMessages.append(f'{error}')
     return errorMessages
 
 
@@ -42,6 +42,7 @@ def create_review(id):
         return review.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+
 @review_routes.route('/game/<int:id>/edit', methods=["POST"])
 @login_required
 def update_review(id):
@@ -54,6 +55,7 @@ def update_review(id):
     review.rating = rating
     db.session.commit()
     return {"Successful": "Update!"}
+
 
 @review_routes.route('/game/<int:id>/delete', methods=["POST"])
 @login_required
