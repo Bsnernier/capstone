@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { eraseReview } from "../store/review";
+import { eraseReview } from "../../store/review";
 
 const ReviewDelete = ({ reviewId, gameId }) => {
   const dispatch = useDispatch();
@@ -16,7 +16,9 @@ const ReviewDelete = ({ reviewId, gameId }) => {
 
   return (
     <form onSubmit={handleDelete}>
-      <button type="submit">Delete</button>
+      <button className="review_button" type="submit">
+        Delete
+      </button>
     </form>
   );
 };

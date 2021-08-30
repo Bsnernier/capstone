@@ -1,0 +1,25 @@
+.edit_form {
+  border: 5px solid black;
+  padding: 5px;
+  background-color: rgb(90, 79, 94);
+}
+
+.edit_rating {
+  background-color: rgb(90, 79, 94);
+}
+
+.edit_rating_label {
+  background-color: rgb(90, 79, 94);
+  font-size: 18px;
+}
+
+.edit_text_input {
+  width: 99%;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.edit_submit {
+  background-color: rgb(47, 41, 49);
+}
