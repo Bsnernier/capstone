@@ -18,11 +18,13 @@ function Games() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="games_container">
       {games?.map((game) => (
         <div>
-          <img src={game?.cover_url} alt="uh oh" />
-          <div>{game?.title}</div>
+          <a className="games_link" href={`/games/${game?.id}`}>
+            <img className="games_image" src={game?.cover_url} alt="uh oh" />
+          </a>
+          <div className="games_title">{game?.title}</div>
         </div>
       ))}
     </div>

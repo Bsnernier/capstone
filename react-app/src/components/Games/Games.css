@@ -1,0 +1,20 @@
+.games_image {
+  transition: transform 0.5s, box-shadow 0.5s, margin-bottom 0.5s;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+}
+
+.games_image:hover {
+  /* border: 10px solid rgb(255, 255, 255); */
+  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+  transform: scale(1.15);
+  margin-bottom: 35px;
+}
+
+.games_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.games_title {
+  font-size: 18px;
+}
