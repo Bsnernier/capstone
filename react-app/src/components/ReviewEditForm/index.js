@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { editReview } from "../../store/review";
@@ -14,13 +14,28 @@ const ReviewEditForm = ({ review, hideForm }) => {
   let { gameId } = useParams();
   const history = useHistory();
 
-  // useEffect(() => {
-  //   setText(review?.text);
-  //   setRating(review?.rating);
-  // }, []);
+  useEffect(() => {
+    setText(review?.text);
+    setRating(review?.rating);
+  }, []);
 
   const submitEditReview = async (e) => {
     e.preventDefault();
+    if (!text && !rating) {
+      setErrors(["Please write a review and leave a rating before submitting"]);
+      return;
+    } else if (!text && rating) {
+      setErrors(["Please write a review for your rating"]);
+      return;
+    } else if (text && !rating) {
+      setErrors(["Please leave a rating with your review"]);
+      return;
+    } else if (text.length > 255) {
+      setErrors([
+        `Your review is ${text.length} chacters in length. Please shorten to 255 or less.`,
+      ]);
+      return;
+    }
     const data = await dispatch(editReview(review?.id, text, rating));
     if (data) {
       setErrors(data);
@@ -38,9 +53,11 @@ const ReviewEditForm = ({ review, hideForm }) => {
 
   return (
     <form className="edit_form" onSubmit={submitEditReview}>
-      <div>
+      <div className="error_map">
         {errors?.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div key={ind} className="error_edit">
+            {error}
+          </div>
         ))}
       </div>
       <div className="edit_text">
