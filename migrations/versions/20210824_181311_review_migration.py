@@ -31,7 +31,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('gameId', sa.Integer(), nullable=False),
-    sa.Column('text', sa.String(length=255), nullable=False),
+    sa.Column('text', sa.String(length=1000), nullable=False),
     sa.Column('rating', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['gameId'], ['games.id'], ),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
