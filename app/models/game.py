@@ -13,8 +13,8 @@ class Game(db.Model):
     genre = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(70), nullable=False, unique=True)
     platforms = db.Column(db.String(255), nullable=False)
-    storyline = db.Column(db.String(255), nullable=False)
-    summary = db.Column(db.String(255), nullable=False)
+    storyline = db.Column(db.String(2000), nullable=False)
+    summary = db.Column(db.String(2000), nullable=False)
 
     reviews = relationship("Review", order_by=Review.id, back_populates="game", uselist=False)
     libraries = relationship("Library", order_by=Library.id, back_populates="game", uselist=False)

@@ -26,8 +26,8 @@ def upgrade():
     sa.Column('genre', sa.String(length=255), nullable=False),
     sa.Column('title', sa.String(length=70), nullable=False),
     sa.Column('platforms', sa.String(length=255), nullable=False),
-    sa.Column('storyline', sa.String(length=255), nullable=False),
-    sa.Column('summary', sa.String(length=255), nullable=False),
+    sa.Column('storyline', sa.String(length=2000), nullable=False),
+    sa.Column('summary', sa.String(length=2000), nullable=False),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('title')
     )
