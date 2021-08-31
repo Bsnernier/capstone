@@ -68,7 +68,6 @@ function Review(props) {
             {showButton(review?.userId, review?.id)}
             {editButton}
             {deleteButton}
-            {/* {showEditContent(review, review?.id)} */}
           </div>
           {showEditContent(review, review?.id)}
         </div>

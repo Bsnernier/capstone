@@ -1,0 +1,99 @@
+.login_form {
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_form_div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  font-size: 30px;
+  background-color: rgb(71, 71, 71);
+  padding: 30px;
+}
+
+.login_label {
+  width: 300px;
+  background-color: rgb(71, 71, 71);
+}
+
+.login_div {
+  width: 300px;
+  background-color: rgb(71, 71, 71);
+}
+
+.login_email_span {
+  font-size: 10px;
+  position: relative;
+  left: 5px;
+  top: 22px;
+  color: rgb(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0, 0);
+  font-size: 15px;
+  width: 100px;
+}
+
+.login_password_span {
+  font-size: 10px;
+  position: relative;
+  left: 5px;
+  top: 22px;
+  color: rgb(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0, 0);
+  font-size: 15px;
+  width: 100px;
+}
+
+input[type="text"] {
+  padding-top: 20px;
+  padding-left: 15px;
+  font-size: 18px;
+  width: 300px;
+  background-color: white;
+}
+
+input[type="password"] {
+  padding-top: 20px;
+  padding-left: 15px;
+  font-size: 18px;
+  width: 300px;
+  background-color: white;
+}
+
+.login_email_input {
+  width: 185px;
+  border-radius: 5px;
+  border-style: none;
+  color: black;
+  box-sizing: border-box;
+}
+
+.login_password_input {
+  width: 185px;
+  border-radius: 5px;
+  border-style: none;
+  color: black;
+  box-sizing: border-box;
+}
+
+.login_errors {
+  background-color: rgb(71, 71, 71);
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.login_error {
+  color: red;
+  background-color: rgb(71, 71, 71);
+}
+
+.error_border {
+  border: 3px solid red;
+}
