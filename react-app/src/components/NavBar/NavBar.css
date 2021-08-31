@@ -6,17 +6,36 @@
 
 .navbar_ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: absolute;
+  background-color: rgb(79, 78, 80);
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-top: 0px;
+  top: 0px;
+  right: 0px;
+  float: left;
+}
+
+.navbar_div {
   position: absolute;
   background-color: rgb(79, 78, 80);
   width: 100%;
-  padding: 10px;
+  height: 50px;
   border-radius: 5px;
   font-size: 25px;
   margin-top: 0px;
   top: 0px;
 }
 
-.navbar_li {
+.navbar_home {
   background-color: rgb(79, 78, 80);
+  position: relative;
+  left: -30.5px;
+}
+
+.navbar_login {
+  margin-right: 15%;
 }
