@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.navbar_ul {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  background-color: rgb(79, 78, 80);
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-top: 0px;
+  top: 0px;
+}
+
+.navbar_li {
+  background-color: rgb(79, 78, 80);
+}
