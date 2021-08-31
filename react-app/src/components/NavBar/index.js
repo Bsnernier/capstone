@@ -17,48 +17,31 @@ const NavBar = () => {
       logButton = <LogoutButton />;
     } else if (!user?.id) {
       logButton = (
-        <NavLink
-          to="/login"
-          exact={true}
-          activeClassName="active"
-          className="navbar_li"
-        >
-          Login
-        </NavLink>
+        <button className="navbar_login">
+          <NavLink to="/login" exact={true} activeClassName="active">
+            Login
+          </NavLink>
+        </button>
       );
     }
   };
 
   return (
     <nav className="navbar">
-      <ul className="navbar_ul">
-        <NavLink
-          to="/"
-          exact={true}
-          activeClassName="active"
-          className="navbar_li"
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/login"
-          exact={true}
-          activeClassName="active"
-          className="navbar_li"
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/sign-up"
-          exact={true}
-          activeClassName="active"
-          className="navbar_li"
-        >
-          Sign Up
-        </NavLink>
-        {showButton()}
-        {logButton}
-      </ul>
+      <div className="navbar_div">
+        <ul className="navbar_ul">
+          <NavLink
+            to="/"
+            exact={true}
+            activeClassName="active"
+            className="navbar_home"
+          >
+            Home
+          </NavLink>
+          {showButton()}
+          {logButton}
+        </ul>
+      </div>
     </nav>
   );
 };

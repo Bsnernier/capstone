@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 
-import "./styles/LoginForm.css";
+import "./styles/AuthForm.css";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -47,9 +47,9 @@ const LoginForm = () => {
     }
   };
 
-  const demoLogin = async (e) => {
+  const demoLogin = (e) => {
     e.preventDefault();
-    const data = await dispatch(login("demo@aa.io", "password"));
+    dispatch(login("demo@aa.io", "password"));
   };
 
   const updateEmail = (e) => {
@@ -65,21 +65,21 @@ const LoginForm = () => {
   }
 
   return (
-    <form className="login_form" onSubmit={onLogin}>
-      <div className="login_form_div">
+    <form className="auth_form" onSubmit={onLogin}>
+      <div className="auth_form_div">
         Log In
-        <div className="login_errors">
+        <div className="auth_errors">
           {errors.map((error, ind) => (
-            <div className="login_error" key={ind}>
+            <div className="auth_error" key={ind}>
               {error.split(":")[1]}
             </div>
           ))}
         </div>
-        <div className="login_div">
-          <label htmlFor="email" className="login_label">
-            <span className="login_email_span">Email:</span>
+        <div className="auth_div">
+          <label htmlFor="email" className="auth_label">
+            <span className="auth_span">Email:</span>
             <input
-              className="login_email_input"
+              className="auth_input"
               name="email"
               type="text"
               value={email}
@@ -87,11 +87,11 @@ const LoginForm = () => {
             />
           </label>
         </div>
-        <div className="login_div">
-          <label htmlFor="password" className="login_label">
-            <span className="login_password_span">Password:</span>
+        <div className="auth_div">
+          <label htmlFor="password" className="auth_label">
+            <span className="auth_span">Password:</span>
             <input
-              className="login_password_input"
+              className="auth_input"
               name="password"
               type="password"
               value={password}
@@ -101,7 +101,7 @@ const LoginForm = () => {
         </div>
         <div>
           <button type="submit">Login</button>
-          <button onClick={() => history.push("/signup")}>Sign Up</button>
+          <button onClick={() => history.push("/sign-up")}>Sign Up</button>
           <button onClick={demoLogin}>Demo Login</button>
         </div>
       </div>

@@ -20,7 +20,7 @@ function Games() {
   return (
     <div className="games_container">
       {games?.map((game) => (
-        <div>
+        <div key={game?.id}>
           <a className="games_link" href={`/games/${game?.id}`}>
             <img className="games_image" src={game?.cover_url} alt="uh oh" />
           </a>
