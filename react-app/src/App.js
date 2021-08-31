@@ -39,18 +39,15 @@ function App() {
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path="/games" exact={true}>
-          <Games />
-        </ProtectedRoute>
         <ProtectedRoute path="/games/:gameId" exact={true}>
           <OneGame />
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
+        <Route path="/" exact={true}>
+          <Games />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
