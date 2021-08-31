@@ -31,7 +31,6 @@ const ReviewForm = () => {
       setErrors(data);
       return;
     }
-    console.log(errors);
     history.push("/");
     history.push(`/games/${gameId}`);
   };
