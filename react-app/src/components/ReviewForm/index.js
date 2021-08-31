@@ -31,7 +31,6 @@ const ReviewForm = () => {
       setErrors(data);
       return;
     }
-    console.log(errors);
     history.push("/");
     history.push(`/games/${gameId}`);
   };
@@ -57,14 +56,16 @@ const ReviewForm = () => {
         <label className="review_text_label" htmlFor="text">
           Write a Review
         </label>
-        <input
+        <textarea
           name="text"
           type="text"
           className="review_text_input"
           placeholder="Leave your review here."
           value={text}
           onChange={updateText}
-        />
+        >
+          {text}
+        </textarea>
       </div>
       <div className="review_form_rating">
         <label className="review_rating_label" htmlFor="rating">

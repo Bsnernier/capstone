@@ -19,9 +19,11 @@
 }
 
 .review_text {
-  /* border: 5px solid blue; */
   font-size: 20px;
   padding-left: 10px;
+  inline-size: 960px;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .review_user_rating {

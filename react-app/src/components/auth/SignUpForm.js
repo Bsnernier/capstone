@@ -17,6 +17,11 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    setErrors([]);
+    if (password !== repeatPassword) {
+      setErrors(["Passwords do not match"]);
+      return;
+    }
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
@@ -57,7 +62,7 @@ const SignUpForm = () => {
         <div className="auth_errors">
           {errors.map((error, ind) => (
             <div className="auth_error" key={ind}>
-              {error}
+              {error.includes(":") ? error.split(":")[1] : error}
             </div>
           ))}
         </div>
@@ -70,6 +75,7 @@ const SignUpForm = () => {
               name="username"
               onChange={updateUsername}
               value={username}
+              required={true}
             />
           </label>
         </div>
@@ -82,6 +88,7 @@ const SignUpForm = () => {
               name="email"
               onChange={updateEmail}
               value={email}
+              required={true}
             />
           </label>
         </div>
@@ -94,6 +101,7 @@ const SignUpForm = () => {
               name="password"
               onChange={updatePassword}
               value={password}
+              required={true}
             />
           </label>
         </div>
@@ -110,10 +118,19 @@ const SignUpForm = () => {
             />
           </label>
         </div>
-        <div>
-          <button type="submit">Sign Up</button>
-          <button onClick={() => history.push("/login")}>Log In</button>
-          <button onClick={demoLogin}>Demo Login</button>
+        <button className="auth_button auth_submit" type="submit">
+          Sign Up
+        </button>
+        <div className="auth_button_div">
+          <button
+            className="auth_button"
+            onClick={() => history.push("/login")}
+          >
+            Log In
+          </button>
+          <button className="auth_button" onClick={demoLogin}>
+            Demo Login
+          </button>
         </div>
       </div>
     </form>

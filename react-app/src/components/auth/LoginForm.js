@@ -17,19 +17,18 @@ const LoginForm = () => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     let input = document.querySelector(".login_email_input");
-    input.classList.remove("error_border");
+    if (input) {
+      input.classList.remove("error_border");
+    }
 
     if (!email) {
       setErrors([data[0]]);
       input = document.querySelector(".login_email_input");
       input.classList.add("error_border");
-      console.log(errors);
       return;
     } else if (email && !password) {
-      console.log("hey");
       setErrors([data[0]]);
       if (password === "") {
-        console.log("hey");
         input = document.querySelector(".login_password_input");
         input.classList.add("error_border");
         return;
@@ -79,7 +78,7 @@ const LoginForm = () => {
           <label htmlFor="email" className="auth_label">
             <span className="auth_span">Email:</span>
             <input
-              className="auth_input"
+              className="auth_input login_email_input"
               name="email"
               type="text"
               value={email}
@@ -91,7 +90,7 @@ const LoginForm = () => {
           <label htmlFor="password" className="auth_label">
             <span className="auth_span">Password:</span>
             <input
-              className="auth_input"
+              className="auth_input login_password_input"
               name="password"
               type="password"
               value={password}
@@ -99,10 +98,19 @@ const LoginForm = () => {
             />
           </label>
         </div>
-        <div>
-          <button type="submit">Login</button>
-          <button onClick={() => history.push("/sign-up")}>Sign Up</button>
-          <button onClick={demoLogin}>Demo Login</button>
+        <button className="auth_submit auth_button" type="submit">
+          Login
+        </button>
+        <div className="auth_button_div">
+          <button
+            className="auth_button"
+            onClick={() => history.push("/sign-up")}
+          >
+            Sign Up
+          </button>
+          <button className="auth_button" onClick={demoLogin}>
+            Demo Login
+          </button>
         </div>
       </div>
     </form>

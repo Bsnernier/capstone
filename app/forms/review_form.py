@@ -4,8 +4,8 @@ from wtforms.validators import DataRequired, ValidationError
 
 def max_length(form, field):
     text = field.data
-    if len(text) > 255:
-        raise ValidationError(f"Your review has {len(text)} characters. Please shorten to under 255")
+    if len(text) > 1000:
+        raise ValidationError(f"Your review has {len(text)} characters. Please shorten to under 1000")
 
 class ReviewForm(FlaskForm):
     text = StringField('text', validators=[DataRequired(), max_length])
