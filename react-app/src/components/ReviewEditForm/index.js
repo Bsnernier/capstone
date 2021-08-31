@@ -30,9 +30,9 @@ const ReviewEditForm = ({ review, hideForm }) => {
     } else if (text && !rating) {
       setErrors(["Please leave a rating with your review"]);
       return;
-    } else if (text.length > 255) {
+    } else if (text.length > 1000) {
       setErrors([
-        `Your review is ${text.length} chacters in length. Please shorten to 255 or less.`,
+        `Your review is ${text.length} chacters in length. Please shorten to 1000 or less.`,
       ]);
       return;
     }
@@ -62,14 +62,14 @@ const ReviewEditForm = ({ review, hideForm }) => {
       </div>
       <div className="edit_text">
         <label className="edit_text_label" htmlFor="text"></label>
-        <input
+        <textarea
           name="text"
           type="text"
           className="edit_text_input"
           placeholder="Write here"
           value={text}
           onChange={updateText}
-        />
+        ></textarea>
       </div>
       <div className="edit_rating">
         <label className="edit_rating_label" htmlFor="rating">
