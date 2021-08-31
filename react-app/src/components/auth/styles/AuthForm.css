@@ -1,4 +1,4 @@
-.login_form {
+.auth_form {
   position: relative;
   top: 100px;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.login_form_div {
+.auth_form_div {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,17 +18,33 @@
   padding: 30px;
 }
 
-.login_label {
+.auth_errors {
+  background-color: rgb(71, 71, 71);
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.auth_error {
+  color: red;
+  background-color: rgb(71, 71, 71);
+}
+
+.error_border {
+  border: 3px solid red;
+}
+
+.auth_div {
   width: 300px;
   background-color: rgb(71, 71, 71);
 }
 
-.login_div {
+.auth_label {
   width: 300px;
   background-color: rgb(71, 71, 71);
 }
 
-.login_email_span {
+.auth_span {
   font-size: 10px;
   position: relative;
   left: 5px;
@@ -39,15 +55,12 @@
   width: 100px;
 }
 
-.login_password_span {
-  font-size: 10px;
-  position: relative;
-  left: 5px;
-  top: 22px;
-  color: rgb(0, 0, 0, 0.75);
-  background-color: rgb(0, 0, 0, 0);
-  font-size: 15px;
-  width: 100px;
+.auth_input {
+  width: 185px;
+  border-radius: 5px;
+  border-style: none;
+  color: black;
+  box-sizing: border-box;
 }
 
 input[type="text"] {
@@ -64,36 +77,4 @@ input[type="password"] {
   font-size: 18px;
   width: 300px;
   background-color: white;
-}
-
-.login_email_input {
-  width: 185px;
-  border-radius: 5px;
-  border-style: none;
-  color: black;
-  box-sizing: border-box;
-}
-
-.login_password_input {
-  width: 185px;
-  border-radius: 5px;
-  border-style: none;
-  color: black;
-  box-sizing: border-box;
-}
-
-.login_errors {
-  background-color: rgb(71, 71, 71);
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 25px;
-}
-
-.login_error {
-  color: red;
-  background-color: rgb(71, 71, 71);
-}
-
-.error_border {
-  border: 3px solid red;
 }
