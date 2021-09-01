@@ -58,7 +58,7 @@ const SignUpForm = () => {
 
   return (
     <div className="auth_container">
-      <img className="auth_logo" src={logo} />
+      <img className="auth_logo" src={logo} alt="logo should be here" />
       <form className="auth_form" onSubmit={onSignUp}>
         <div className="auth_form_div">
           Sign Up

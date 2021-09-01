@@ -2,14 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import { useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
 import logo from "../../resources/gg_logo_gif.gif";
 
 import "./NavBar.css";
 
 const NavBar = () => {
   const user = useSelector((state) => state.session.user);
-  const history = useHistory();
 
   let logButton = null;
 
@@ -42,7 +40,7 @@ const NavBar = () => {
             activeClassName="active"
             className="navbar_home"
           >
-            <img className="navbar_logo" src={logo} />
+            <img className="navbar_logo" src={logo} alt="logo should be here" />
           </NavLink>
           {showButton()}
           {logButton}

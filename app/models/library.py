@@ -12,3 +12,13 @@ class Library(db.Model):
 
     game = relationship("Game", back_populates="libraries")
     user = relationship("User", back_populates="libraries")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'gameId': self.gameId,
+            'status': self.status,
+            'cover': self.game.cover_url,
+            'title': self.game.title
+        }
