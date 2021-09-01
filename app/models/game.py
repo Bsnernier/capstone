@@ -29,5 +29,19 @@ class Game(db.Model):
             'title': self.title,
             'platforms': self.platforms,
             'storyline': self.storyline,
-            'summary': self.summary
+            'summary': self.summary,
+        }
+
+    def to_library(self):
+        return {
+            'id': self.id,
+            'igdbId': self.igdbId,
+            'cover_url': self.cover_url,
+            'first_release_date': self.first_release_date,
+            'genre': self.genre,
+            'title': self.title,
+            'platforms': self.platforms,
+            'storyline': self.storyline,
+            'summary': self.summary,
+            'library_user': self.libraries.userId
         }

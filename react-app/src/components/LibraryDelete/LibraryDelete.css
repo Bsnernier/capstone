@@ -1,0 +1,28 @@
+.delete_form {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 500px;
+  background-color: rgb(90, 79, 94);
+  border-radius: 10px;
+  border: 5px solid rgb(47, 41, 49);
+}
+
+.delete_message {
+  font-size: 23px;
+  padding: 15px;
+  text-align: center;
+  background-color: rgb(90, 79, 94);
+}
+
+.delete_buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  font-size: 23px;
+  background-color: rgb(90, 79, 94);
+}
+
+.delete_button {
+  background-color: rgb(47, 41, 49);
+}

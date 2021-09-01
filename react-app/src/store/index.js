@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import session from "./session";
 import game from "./game";
 import review from "./review";
+import library from "./library";
 
 const rootReducer = combineReducers({
   session,
   game,
   review,
+  library,
 });
 
 let enhancer;

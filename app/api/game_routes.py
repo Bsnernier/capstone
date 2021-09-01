@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import db, Game
+from app.models import db, Game, Library
 
 game_routes = Blueprint('games', __name__)
 
@@ -14,4 +14,6 @@ def get_games():
 @login_required
 def get_one_game(id):
     game = Game.query.get(id)
-    return {game.id: game.to_dict()}
+    if game.libraries:
+        return {game.id: game.to_library()}
+    else: return {game.id: game.to_dict()}

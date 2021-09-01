@@ -9,6 +9,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Games from "./components/Games";
 import OneGame from "./components/OneGame";
+import Library from "./components/Library";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -37,7 +38,6 @@ function App() {
         </Route>
         <div>
           <NavBar />
-
           <ProtectedRoute path="/users" exact={true}>
             <UsersList />
           </ProtectedRoute>
@@ -46,6 +46,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/users/:userId" exact={true}>
             <User />
+          </ProtectedRoute>
+          <ProtectedRoute path="/library" exact={true}>
+            <Library />
           </ProtectedRoute>
           <Route path="/" exact={true}>
             <Games />

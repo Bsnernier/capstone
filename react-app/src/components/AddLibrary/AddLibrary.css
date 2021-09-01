@@ -1,0 +1,56 @@
+.library_form {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 500px;
+  background-color: rgb(90, 79, 94);
+  border-radius: 10px;
+  border: 5px solid rgb(47, 41, 49);
+}
+
+.library_thumb {
+  width: 90px;
+  height: 128px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background-color: rgb(90, 79, 94);
+}
+
+.library_title {
+  position: relative;
+  left: 120px;
+  font-size: 25px;
+  top: -100px;
+  background-color: rgb(90, 79, 94);
+  width: 370px;
+}
+
+.library_form_status {
+  position: relative;
+  left: 120px;
+  font-size: 20px;
+  top: -80px;
+  background-color: rgb(90, 79, 94);
+  width: 370px;
+}
+
+.library_submit {
+  position: relative;
+  top: -60px;
+  width: 100px;
+  left: 370px;
+  background-color: rgb(47, 41, 49);
+}
+
+.library_status_label {
+  background-color: rgb(90, 79, 94);
+}
+
+.library_status_input {
+  background-color: rgb(47, 41, 49);
+}
+
+.library_option {
+  background-color: rgb(47, 41, 49);
+}

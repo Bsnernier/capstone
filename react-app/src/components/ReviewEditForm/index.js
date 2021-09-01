@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
 import { editReview } from "../../store/review";
 
 import "./ReviewEditForm.css";
@@ -11,13 +10,11 @@ const ReviewEditForm = ({ review, hideForm }) => {
   const [rating, setRating] = useState();
 
   const dispatch = useDispatch();
-  let { gameId } = useParams();
-  const history = useHistory();
 
   useEffect(() => {
     setText(review?.text);
     setRating(review?.rating);
-  }, []);
+  }, [review?.rating, review?.text]);
 
   const submitEditReview = async (e) => {
     e.preventDefault();
