@@ -4,6 +4,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 
 import "./styles/AuthForm.css";
+import logo from "../../resources/gg_logo_gif.gif";
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -64,56 +65,59 @@ const LoginForm = () => {
   }
 
   return (
-    <form className="auth_form" onSubmit={onLogin}>
-      <div className="auth_form_div">
-        Log In
-        <div className="auth_errors">
-          {errors.map((error, ind) => (
-            <div className="auth_error" key={ind}>
-              {error.split(":")[1]}
-            </div>
-          ))}
-        </div>
-        <div className="auth_div">
-          <label htmlFor="email" className="auth_label">
-            <span className="auth_span">Email:</span>
-            <input
-              className="auth_input login_email_input"
-              name="email"
-              type="text"
-              value={email}
-              onChange={updateEmail}
-            />
-          </label>
-        </div>
-        <div className="auth_div">
-          <label htmlFor="password" className="auth_label">
-            <span className="auth_span">Password:</span>
-            <input
-              className="auth_input login_password_input"
-              name="password"
-              type="password"
-              value={password}
-              onChange={updatePassword}
-            />
-          </label>
-        </div>
-        <button className="auth_submit auth_button" type="submit">
-          Login
-        </button>
-        <div className="auth_button_div">
-          <button
-            className="auth_button"
-            onClick={() => history.push("/sign-up")}
-          >
-            Sign Up
+    <div className="auth_container">
+      <img className="auth_logo" src={logo} />
+      <form className="auth_form" onSubmit={onLogin}>
+        <div className="auth_form_div">
+          Log In
+          <div className="auth_errors">
+            {errors.map((error, ind) => (
+              <div className="auth_error" key={ind}>
+                {error.split(":")[1]}
+              </div>
+            ))}
+          </div>
+          <div className="auth_div">
+            <label htmlFor="email" className="auth_label">
+              <span className="auth_span">Email:</span>
+              <input
+                className="auth_input login_email_input"
+                name="email"
+                type="text"
+                value={email}
+                onChange={updateEmail}
+              />
+            </label>
+          </div>
+          <div className="auth_div">
+            <label htmlFor="password" className="auth_label">
+              <span className="auth_span">Password:</span>
+              <input
+                className="auth_input login_password_input"
+                name="password"
+                type="password"
+                value={password}
+                onChange={updatePassword}
+              />
+            </label>
+          </div>
+          <button className="auth_submit auth_button" type="submit">
+            Login
           </button>
-          <button className="auth_button" onClick={demoLogin}>
-            Demo Login
-          </button>
+          <div className="auth_button_div">
+            <button
+              className="auth_button"
+              onClick={() => history.push("/sign-up")}
+            >
+              Sign Up
+            </button>
+            <button className="auth_button" onClick={demoLogin}>
+              Demo Login
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

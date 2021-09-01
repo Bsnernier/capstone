@@ -4,6 +4,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { login, signUp } from "../../store/session";
 
 import "./styles/AuthForm.css";
+import logo from "../../resources/gg_logo_gif.gif";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -56,84 +57,87 @@ const SignUpForm = () => {
   }
 
   return (
-    <form className="auth_form" onSubmit={onSignUp}>
-      <div className="auth_form_div">
-        Sign Up
-        <div className="auth_errors">
-          {errors.map((error, ind) => (
-            <div className="auth_error" key={ind}>
-              {error.includes(":") ? error.split(":")[1] : error}
-            </div>
-          ))}
-        </div>
-        <div className="auth_div">
-          <label className="auth_label">
-            <span className="auth_span">Username:</span>
-            <input
-              className="auth_input"
-              type="text"
-              name="username"
-              onChange={updateUsername}
-              value={username}
-              required={true}
-            />
-          </label>
-        </div>
-        <div className="auth_div">
-          <label className="auth_label">
-            <span className="auth_span">Email:</span>
-            <input
-              className="auth_input"
-              type="text"
-              name="email"
-              onChange={updateEmail}
-              value={email}
-              required={true}
-            />
-          </label>
-        </div>
-        <div className="auth_div">
-          <label className="auth_label">
-            <span className="auth_span">Password:</span>
-            <input
-              className="auth_input"
-              type="password"
-              name="password"
-              onChange={updatePassword}
-              value={password}
-              required={true}
-            />
-          </label>
-        </div>
-        <div className="auth_div">
-          <label className="auth_label">
-            <span className="auth_span">Repeat Password:</span>
-            <input
-              className="auth_input"
-              type="password"
-              name="repeat_password"
-              onChange={updateRepeatPassword}
-              value={repeatPassword}
-              required={true}
-            />
-          </label>
-        </div>
-        <button className="auth_button auth_submit" type="submit">
+    <div className="auth_container">
+      <img className="auth_logo" src={logo} />
+      <form className="auth_form" onSubmit={onSignUp}>
+        <div className="auth_form_div">
           Sign Up
-        </button>
-        <div className="auth_button_div">
-          <button
-            className="auth_button"
-            onClick={() => history.push("/login")}
-          >
-            Log In
+          <div className="auth_errors">
+            {errors.map((error, ind) => (
+              <div className="auth_error" key={ind}>
+                {error.includes(":") ? error.split(":")[1] : error}
+              </div>
+            ))}
+          </div>
+          <div className="auth_div">
+            <label className="auth_label">
+              <span className="auth_span">Username:</span>
+              <input
+                className="auth_input"
+                type="text"
+                name="username"
+                onChange={updateUsername}
+                value={username}
+                required={true}
+              />
+            </label>
+          </div>
+          <div className="auth_div">
+            <label className="auth_label">
+              <span className="auth_span">Email:</span>
+              <input
+                className="auth_input"
+                type="text"
+                name="email"
+                onChange={updateEmail}
+                value={email}
+                required={true}
+              />
+            </label>
+          </div>
+          <div className="auth_div">
+            <label className="auth_label">
+              <span className="auth_span">Password:</span>
+              <input
+                className="auth_input"
+                type="password"
+                name="password"
+                onChange={updatePassword}
+                value={password}
+                required={true}
+              />
+            </label>
+          </div>
+          <div className="auth_div">
+            <label className="auth_label">
+              <span className="auth_span">Repeat Password:</span>
+              <input
+                className="auth_input"
+                type="password"
+                name="repeat_password"
+                onChange={updateRepeatPassword}
+                value={repeatPassword}
+                required={true}
+              />
+            </label>
+          </div>
+          <button className="auth_button auth_submit" type="submit">
+            Sign Up
           </button>
-          <button className="auth_button" onClick={demoLogin}>
-            Demo Login
-          </button>
+          <div className="auth_button_div">
+            <button
+              className="auth_button"
+              onClick={() => history.push("/login")}
+            >
+              Log In
+            </button>
+            <button className="auth_button" onClick={demoLogin}>
+              Demo Login
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 

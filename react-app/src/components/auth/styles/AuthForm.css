@@ -91,7 +91,7 @@ input[type="password"] {
 
 .auth_button:hover {
   transform: scale(1.15);
-  background-color: rgb(70, 0, 161);
+  background-color: rgb(16.4, 72.8, 25.9);
   box-shadow: 8px 8px 8px rgb(0, 0, 0, 0.5);
 }
 
@@ -102,6 +102,16 @@ input[type="password"] {
 
 .auth_logout {
   display: flex;
+  padding-right: 10%;
+  margin: 0px;
+  align-items: center;
+  height: 48px;
+  margin-top: 23px;
+  background-color: rgb(79, 78, 80);
+  border: 0px;
+  border-radius: 5px;
+  border-color: rgb(8, 36, 13);
+  transition: 0.3s;
 }
 
 .auth_logout_username {
@@ -111,4 +121,19 @@ input[type="password"] {
 
 .error_border {
   border: 3px solid red;
+}
+
+.auth_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth_logo {
+  position: absolute;
+  height: 200px;
+  width: 600px;
+  z-index: 1;
+  align-self: center;
+  margin-top: 50px;
+  border-radius: 90px;
 }

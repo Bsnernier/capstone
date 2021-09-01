@@ -13,9 +13,9 @@ const LogoutButton = () => {
   };
 
   return (
-    <div className="auth_logout navbar_login">
+    <div className="auth_logout">
       <span className="auth_logout_username">{user.username}</span>
-      <button className="navbar_login" onClick={onLogout}>
+      <button className="navbar_logout_button" onClick={onLogout}>
         Logout
       </button>
     </div>

@@ -52,7 +52,7 @@ const ReviewForm = () => {
           </div>
         ))}
       </div>
-      <div>
+      <div className="review_form_rating">
         <label className="review_text_label" htmlFor="text">
           Write a Review
         </label>
