@@ -13,7 +13,7 @@ function Games() {
   useEffect(() => {
     (async () => {
       let test = await dispatch(getAllGames());
-      setGames(test.games);
+      setGames(test?.games);
     })();
   }, [dispatch]);
 

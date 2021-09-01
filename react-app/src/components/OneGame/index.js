@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import Review from "../Review";
@@ -13,7 +13,10 @@ function OneGame() {
   const [game, setGame] = useState();
 
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.session.user);
   let { gameId } = useParams();
+
+  let libraryStatus = null;
 
   useEffect(() => {
     (async () => {
@@ -33,11 +36,27 @@ function OneGame() {
     return `${month}-${date}-${year}`;
   };
 
+  const checkLibrary = (userId) => {
+    if (userId === user?.id) {
+      libraryStatus = (
+        <div className="game_library_button game_text">In Library</div>
+      );
+    } else {
+      libraryStatus = (
+        <button className="game_library_button game_text">
+          Add To Library
+        </button>
+      );
+    }
+  };
+
   return (
     <div className="container">
       <div className="game">
         <img className="game_cover" src={game?.cover_url} alt="uh oh" />
         <div className="game_title game_text">{game?.title}</div>
+        {checkLibrary(game?.library_user)}
+        {libraryStatus}
         <div className="game_date game_text">
           Initially Released: {toDateTime(game?.first_release_date)}
         </div>

@@ -20,4 +20,4 @@ def validation_errors_to_error_messages(validation_errors):
 def get_library(id):
     library = Library.query.filter_by(userId=id).all()
     print("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", library[0].status)
-    return {'library': [game.to_dict() for game in library]}
+    return {'library': [game.to_library() for game in library]}

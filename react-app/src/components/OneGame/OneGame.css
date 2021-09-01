@@ -21,39 +21,48 @@
   top: 20px;
 }
 
+.game_library_button {
+  font-size: 20px;
+  position: absolute;
+  height: 30px;
+  background-color: rgb(47, 41, 49);
+  left: 350px;
+  top: 60px;
+}
+
 .game_date {
   background-color: rgb(90, 79, 94);
   position: absolute;
   left: 350px;
-  top: 60px;
+  top: 100px;
 }
 
 .game_genre {
   background-color: rgb(90, 79, 94);
   position: absolute;
   left: 350px;
-  top: 90px;
+  top: 130px;
 }
 
 .game_platforms {
   background-color: rgb(90, 79, 94);
   position: absolute;
   left: 350px;
-  top: 120px;
+  top: 160px;
 }
 
 .game_storyline {
   background-color: rgb(90, 79, 94);
   position: absolute;
   left: 350px;
-  top: 150px;
+  top: 190px;
 }
 
 .game_summary {
   background-color: rgb(90, 79, 94);
   position: absolute;
   left: 350px;
-  top: 250px;
+  top: 280px;
 }
 
 .game_review {
