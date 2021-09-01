@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import { useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
+import logo from "./gg_logo.png";
 
 import "./NavBar.css";
 
@@ -18,7 +19,12 @@ const NavBar = () => {
     } else if (!user?.id) {
       logButton = (
         <button className="navbar_login">
-          <NavLink to="/login" exact={true} activeClassName="active">
+          <NavLink
+            to="/login"
+            exact={true}
+            activeClassName="active"
+            className="navbar_login_nav"
+          >
             Login
           </NavLink>
         </button>
@@ -36,7 +42,7 @@ const NavBar = () => {
             activeClassName="active"
             className="navbar_home"
           >
-            Home
+            <img className="navbar_logo" src={logo} />
           </NavLink>
           {showButton()}
           {logButton}
