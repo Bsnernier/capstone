@@ -55,8 +55,6 @@ function Review(props) {
     }
   };
 
-  console.log(reviews);
-
   return (
     <div className="review">
       {reviews?.map((review) => (

@@ -15,7 +15,6 @@ function Library() {
     (async () => {
       let test = await dispatch(getLibraryForUser(user.id));
       setShelf(test.library);
-      console.log(shelf);
     })();
   }, [dispatch, user.id]);
 

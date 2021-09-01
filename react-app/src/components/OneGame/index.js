@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Modal from "react-modal";
 
 import Review from "../Review";
 import ReviewForm from "../ReviewForm";
+import AddLibrary from "../AddLibrary";
 
 import { getOneGame } from "../../store/game";
 
@@ -11,6 +13,14 @@ import "./OneGame.css";
 
 function OneGame() {
   const [game, setGame] = useState();
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
@@ -43,7 +53,10 @@ function OneGame() {
       );
     } else {
       libraryStatus = (
-        <button className="game_library_button game_text">
+        <button
+          className="game_library_button game_text"
+          onClick={modalIsOpen ? closeModal : openModal}
+        >
           Add To Library
         </button>
       );
@@ -51,31 +64,55 @@ function OneGame() {
   };
 
   return (
-    <div className="container">
-      <div className="game">
-        <img className="game_cover" src={game?.cover_url} alt="uh oh" />
-        <div className="game_title game_text">{game?.title}</div>
-        {checkLibrary(game?.library_user)}
-        {libraryStatus}
-        <div className="game_date game_text">
-          Initially Released: {toDateTime(game?.first_release_date)}
+    <>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className="library-modal"
+        overlayClassName="navbar-modal__overlay"
+        ariaHideApp={false}
+      >
+        <AddLibrary game={game} />
+      </Modal>
+      <div className="container">
+        <div className="game">
+          <img className="game_cover" src={game?.cover_url} alt="uh oh" />
+          <div className="game_title game_text">{game?.title}</div>
+          {checkLibrary(game?.library_user)}
+          {libraryStatus}
+          <div className="game_date game_text">
+            Initially Released: {toDateTime(game?.first_release_date)}
+          </div>
+          <div className="game_genre game_text">Genres: {game?.genre}</div>
+          <div className="game_platforms game_text">
+            Platforms: {game?.platforms}
+          </div>
+          <div className="game_storyline game_text">
+            Storyline: {game?.storyline}
+          </div>
+          <div className="game_summary game_text">Summary: {game?.summary}</div>
         </div>
-        <div className="game_genre game_text">Genres: {game?.genre}</div>
-        <div className="game_platforms game_text">
-          Platforms: {game?.platforms}
+        <div className="game_review">
+          <div className="game_review_container">
+            <Review className="game_review_component" gameId={gameId} />
+            <ReviewForm className="game_review_form" gameId={gameId} />
+          </div>
         </div>
-        <div className="game_storyline game_text">
-          Storyline: {game?.storyline}
-        </div>
-        <div className="game_summary game_text">Summary: {game?.summary}</div>
       </div>
-      <div className="game_review">
-        <div className="game_review_container">
-          <Review className="game_review_component" gameId={gameId} />
-          <ReviewForm className="game_review_form" gameId={gameId} />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 export default OneGame;
+
+{
+  /* <Modal
+isOpen={modalIsOpen}
+onRequestClose={closeModal}
+className="navbar-modal"
+overlayClassName="navbar-modal__overlay"
+parentSelector={() => document.querySelector(".navbar-profile")}
+ariaHideApp={false}
+>
+<LogoutButton className="navbar-modal__button" />
+</Modal> */
+}
