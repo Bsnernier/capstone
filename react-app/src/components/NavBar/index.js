@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import { useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
-import logo from "./gg_logo.png";
+import logo from "../../resources/gg_logo_gif.gif";
 
 import "./NavBar.css";
 
@@ -25,7 +25,7 @@ const NavBar = () => {
             activeClassName="active"
             className="navbar_login_nav"
           >
-            Login
+            Log In
           </NavLink>
         </button>
       );

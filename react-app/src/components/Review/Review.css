@@ -10,12 +10,14 @@
 
 .review_content {
   border: 5px solid rgb(90, 79, 94);
+  background-color: rgb(47, 41, 49);
   padding: 5px;
 }
 
 .review_username {
   width: auto;
   font-size: 25px;
+  background-color: rgb(47, 41, 49);
 }
 
 .review_text {
@@ -24,17 +26,20 @@
   inline-size: 960px;
   overflow-wrap: break-word;
   hyphens: auto;
+  background-color: rgb(47, 41, 49);
 }
 
 .review_user_rating {
   display: flex;
   justify-content: space-between;
+  background-color: rgb(47, 41, 49);
 }
 
 .review_buttons {
   display: flex;
   justify-content: flex-end;
   margin: 3px;
+  background-color: rgb(47, 41, 49);
 }
 
 .review_button {
