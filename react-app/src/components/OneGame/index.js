@@ -72,7 +72,7 @@ function OneGame() {
         overlayClassName="navbar-modal__overlay"
         ariaHideApp={false}
       >
-        <AddLibrary game={game} />
+        <AddLibrary game={game} closeModal={closeModal} />
       </Modal>
       <div className="container">
         <div className="game">
