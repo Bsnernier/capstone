@@ -13,9 +13,17 @@
 .games_container {
   display: flex;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
 .games_title {
-  font-size: 18px;
+  position: relative;
+  font-size: 15px;
+  font-family: "Pixel";
+  align-self: center;
+}
+
+.games_card {
+  display: flex;
+  flex-direction: column;
 }
