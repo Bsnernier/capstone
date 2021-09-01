@@ -14,6 +14,7 @@ function Library() {
   useEffect(() => {
     (async () => {
       let test = await dispatch(getLibraryForUser(user.id));
+      console.log(user);
       setShelf(test.library);
     })();
   }, [dispatch, user.id]);
@@ -21,10 +22,12 @@ function Library() {
   return (
     <div className="games_container">
       {shelf?.map((game) => (
-        <div>
-          <div>{game?.title}</div>
-          <img className="game_cover" src={game?.cover} alt="uh oh" />
-          <div>Progress: {game?.status}</div>
+        <div className="games_card" key={game?.id}>
+          <a className="games_link" href={`/games/${game?.gameId}`}>
+            <img className="games_image" src={game?.cover} alt="uh oh" />
+          </a>
+          <div className="games_title">{game?.title}</div>
+          <div className="games_title">Progress: {game?.status}</div>
         </div>
       ))}
     </div>

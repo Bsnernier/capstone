@@ -66,6 +66,7 @@ const LibraryForm = ({ game, closeModal }) => {
           value={status}
           onChange={updateStatus}
         >
+          <option className="library_option"></option>
           <option className="library_option">Just Purchased</option>
           <option className="library_option">Started</option>
           <option className="library_option">Halfway Through</option>

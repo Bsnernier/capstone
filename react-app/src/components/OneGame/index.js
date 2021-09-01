@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import Review from "../Review";
 import ReviewForm from "../ReviewForm";
 import AddLibrary from "../AddLibrary";
+import LibraryDelete from "../LibraryDelete";
 
 import { getOneGame } from "../../store/game";
 
@@ -20,6 +21,14 @@ function OneGame() {
   }
   function closeModal() {
     setIsOpen(false);
+  }
+
+  const [deleteModalIsOpen, setDeleteIsOpen] = useState(false);
+  function openDeleteModal() {
+    setDeleteIsOpen(true);
+  }
+  function closeDeleteModal() {
+    setDeleteIsOpen(false);
   }
 
   const dispatch = useDispatch();
@@ -49,7 +58,12 @@ function OneGame() {
   const checkLibrary = (userId) => {
     if (userId === user?.id) {
       libraryStatus = (
-        <div className="game_library_button game_text">In Library</div>
+        <button
+          onClick={deleteModalIsOpen ? closeDeleteModal : openDeleteModal}
+          className="game_library_button game_text"
+        >
+          In Library
+        </button>
       );
     } else {
       libraryStatus = (
@@ -69,10 +83,25 @@ function OneGame() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         className="library-modal"
-        overlayClassName="navbar-modal__overlay"
+        overlayClassName="library-modal__overlay"
         ariaHideApp={false}
       >
         <AddLibrary game={game} closeModal={closeModal} />
+      </Modal>
+      <Modal
+        isOpen={deleteModalIsOpen}
+        onRequestClose={closeDeleteModal}
+        className="library-modal"
+        overlayClassName="library-modal__overlay"
+        ariaHideApp={false}
+        shouldCloseOnOverlayClick={true}
+      >
+        <LibraryDelete
+          game={game}
+          closeDeleteModal={() => {
+            closeDeleteModal();
+          }}
+        />
       </Modal>
       <div className="container">
         <div className="game">

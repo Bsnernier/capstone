@@ -4,6 +4,8 @@
   height: 150px;
   width: 500px;
   background-color: rgb(90, 79, 94);
+  border-radius: 10px;
+  border: 5px solid rgb(47, 41, 49);
 }
 
 .library_thumb {
@@ -17,7 +19,7 @@
 
 .library_title {
   position: relative;
-  left: 130px;
+  left: 120px;
   font-size: 25px;
   top: -100px;
   background-color: rgb(90, 79, 94);
@@ -26,7 +28,7 @@
 
 .library_form_status {
   position: relative;
-  left: 130px;
+  left: 120px;
   font-size: 20px;
   top: -80px;
   background-color: rgb(90, 79, 94);
