@@ -43,5 +43,7 @@ class Game(db.Model):
             'platforms': self.platforms,
             'storyline': self.storyline,
             'summary': self.summary,
+            'libraryId': self.libraries.id,
+            'library_status': self.libraries.status,
             'library_user': self.libraries.userId
         }

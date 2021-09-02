@@ -16,11 +16,13 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f'{error}')
     return errorMessages
 
+
 @library_routes.route('/users/<int:id>')
 @login_required
 def get_library(id):
     library = Library.query.filter_by(userId=id).all()
     return {'library': [game.to_dict() for game in library]}
+
 
 @library_routes.route('/users/<int:id>', methods=['POST'])
 @login_required
@@ -38,14 +40,26 @@ def add_library(id):
         return library.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+
+@library_routes.route('/users/<int:id>/edit', methods=['POST'])
+@login_required
+def edit_library(id):
+    libraryId = request.form['libraryId']
+    status = request.form['status']
+
+    library = Library.query.get(libraryId)
+    library.status = status
+    db.session.commit()
+
+    return library.to_dict()
+
+
 @library_routes.route('/users/<int:id>/delete', methods=["POST"])
 @login_required
 def delete_library(id):
     userId = request.form['userId']
     gameId = request.form['gameId']
     library = Library.query.filter_by(userId=userId, gameId=gameId).first()
-
-    print("||||||||||||||||||||||||||||||||||", library)
 
     db.session.delete(library)
     db.session.commit()

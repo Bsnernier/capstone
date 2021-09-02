@@ -14,7 +14,6 @@ function Library() {
   useEffect(() => {
     (async () => {
       let test = await dispatch(getLibraryForUser(user.id));
-      console.log(user);
       setShelf(test.library);
     })();
   }, [dispatch, user.id]);

@@ -7,6 +7,7 @@ import Review from "../Review";
 import ReviewForm from "../ReviewForm";
 import AddLibrary from "../AddLibrary";
 import LibraryDelete from "../LibraryDelete";
+import LibraryEdit from "../LibraryEdit";
 
 import { getOneGame } from "../../store/game";
 
@@ -29,6 +30,14 @@ function OneGame() {
   }
   function closeDeleteModal() {
     setDeleteIsOpen(false);
+  }
+
+  const [editIsOpen, setEditIsOpen] = useState(false);
+  function openEditModal() {
+    setEditIsOpen(true);
+  }
+  function closeEditModal() {
+    setEditIsOpen(false);
   }
 
   const dispatch = useDispatch();
@@ -101,6 +110,24 @@ function OneGame() {
           closeDeleteModal={() => {
             closeDeleteModal();
           }}
+          openEditModal={() => {
+            openEditModal();
+          }}
+        />
+      </Modal>
+      <Modal
+        isOpen={editIsOpen}
+        onRequestClose={closeEditModal}
+        className="library-modal"
+        overlayClassName="library-modal__overlay"
+        ariaHideApp={false}
+        shouldCloseOnOverlayClick={true}
+      >
+        <LibraryEdit
+          game={game}
+          closeEditModal={() => {
+            closeEditModal();
+          }}
         />
       </Modal>
       <div className="container">
@@ -132,16 +159,3 @@ function OneGame() {
   );
 }
 export default OneGame;
-
-{
-  /* <Modal
-isOpen={modalIsOpen}
-onRequestClose={closeModal}
-className="navbar-modal"
-overlayClassName="navbar-modal__overlay"
-parentSelector={() => document.querySelector(".navbar-profile")}
-ariaHideApp={false}
->
-<LogoutButton className="navbar-modal__button" />
-</Modal> */
-}
