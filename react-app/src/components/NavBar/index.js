@@ -44,6 +44,16 @@ const NavBar = () => {
           </NavLink>
           {showButton()}
           {logButton}
+          <button className="navbar_login">
+            <NavLink
+              to="/library"
+              exact={true}
+              activeClassName="active"
+              className="navbar_login_nav"
+            >
+              Library
+            </NavLink>
+          </button>
         </ul>
       </div>
     </nav>
