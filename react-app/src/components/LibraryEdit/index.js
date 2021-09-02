@@ -16,7 +16,10 @@ const LibraryEdit = ({ game }) => {
 
   const editLibrary = async (e) => {
     e.preventDefault();
-    console.log(user.id, game.libraryId, status);
+    if (status === undefined) {
+      setErrors(["Not a valid choice"]);
+      return;
+    }
     const data = await dispatch(updateLibrary(user.id, game.libraryId, status));
     if (data) {
       setErrors(data);
@@ -37,13 +40,6 @@ const LibraryEdit = ({ game }) => {
 
   return (
     <form className="library_form" onSubmit={editLibrary}>
-      <div className="error_map">
-        {errors?.map((error, ind) => (
-          <div key={ind} className="error">
-            {error}
-          </div>
-        ))}
-      </div>
       <img
         className="library_thumb"
         src={convertToThumb(game?.cover_url)}
@@ -73,6 +69,13 @@ const LibraryEdit = ({ game }) => {
       <button className="library_submit" type="submit">
         Edit status
       </button>
+      <div className="error_map_modal">
+        {errors?.map((error, ind) => (
+          <div key={ind} className="error_modal">
+            {error}
+          </div>
+        ))}
+      </div>
     </form>
   );
 };

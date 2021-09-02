@@ -54,3 +54,17 @@
 .library_option {
   background-color: rgb(47, 41, 49);
 }
+
+.error_map_modal {
+  position: absolute;
+  width: 200px;
+  top: 108px;
+  left: 190px;
+  background-color: rgb(90, 79, 94);
+}
+
+.error_modal {
+  color: red;
+  font-size: 22px;
+  background-color: rgb(90, 79, 94);
+}

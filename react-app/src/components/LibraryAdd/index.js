@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addGameToLibrary } from "../../store/library";
 
-import "./AddLibrary.css";
+import "./LibraryAdd.css";
 
 const LibraryForm = ({ game, closeModal }) => {
   const [errors, setErrors] = useState([]);
@@ -38,13 +38,13 @@ const LibraryForm = ({ game, closeModal }) => {
 
   return (
     <form className="library_form" onSubmit={submitLibrary}>
-      <div className="error_map">
+      {/* <div className="error_map">
         {errors?.map((error, ind) => (
           <div key={ind} className="error">
             {error}
           </div>
         ))}
-      </div>
+      </div> */}
       <img
         className="library_thumb"
         src={convertToThumb(game?.cover_url)}
@@ -70,6 +70,13 @@ const LibraryForm = ({ game, closeModal }) => {
           <option className="library_option">Beat the Game</option>
           <option className="library_option">100% Completed</option>
         </select>
+      </div>
+      <div className="error_map_modal">
+        {errors?.map((error, ind) => (
+          <div key={ind} className="error_modal">
+            {error}
+          </div>
+        ))}
       </div>
       <button className="library_submit" type="submit">
         Add to Library

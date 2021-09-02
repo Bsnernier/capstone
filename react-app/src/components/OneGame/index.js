@@ -5,7 +5,7 @@ import Modal from "react-modal";
 
 import Review from "../Review";
 import ReviewForm from "../ReviewForm";
-import AddLibrary from "../AddLibrary";
+import LibraryAdd from "../LibraryAdd";
 import LibraryDelete from "../LibraryDelete";
 import LibraryEdit from "../LibraryEdit";
 
@@ -95,7 +95,7 @@ function OneGame() {
         overlayClassName="library-modal__overlay"
         ariaHideApp={false}
       >
-        <AddLibrary game={game} closeModal={closeModal} />
+        <LibraryAdd game={game} closeModal={closeModal} />
       </Modal>
       <Modal
         isOpen={deleteModalIsOpen}
