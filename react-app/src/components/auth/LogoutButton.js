@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 
 import "../NavBar/NavBar.css";
@@ -7,18 +8,18 @@ import "../NavBar/NavBar.css";
 const LogoutButton = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
+  const history = useHistory();
 
   const onLogout = async (e) => {
     await dispatch(logout());
+    history.push("/library");
+    history.push("/");
   };
 
   return (
-    <div className="auth_logout">
-      <span className="auth_logout_username">{user.username}</span>
-      <button className="navbar_logout_button" onClick={onLogout}>
-        Logout
-      </button>
-    </div>
+    <button className="navbar_modal_link" onClick={onLogout}>
+      Logout
+    </button>
   );
 };
 

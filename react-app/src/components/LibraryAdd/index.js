@@ -38,13 +38,6 @@ const LibraryForm = ({ game, closeModal }) => {
 
   return (
     <form className="library_form" onSubmit={submitLibrary}>
-      {/* <div className="error_map">
-        {errors?.map((error, ind) => (
-          <div key={ind} className="error">
-            {error}
-          </div>
-        ))}
-      </div> */}
       <img
         className="library_thumb"
         src={convertToThumb(game?.cover_url)}
