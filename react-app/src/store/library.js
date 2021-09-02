@@ -1,5 +1,6 @@
 const GET_LIBRARY = "library/GET_LIBRARY";
 const ADD_LIBRARY = "library/ADD_LIBRARY";
+const EDIT_LIBRARY = "library/EDIT_LIBRARY";
 const DELETE_LIBRARY = "library/DELETE_LIBRARY";
 
 const getLibrary = (library) => ({
@@ -9,6 +10,11 @@ const getLibrary = (library) => ({
 
 const addLibrary = (library) => ({
   type: ADD_LIBRARY,
+  payload: library,
+});
+
+const editLibrary = (library) => ({
+  type: EDIT_LIBRARY,
   payload: library,
 });
 
@@ -53,6 +59,30 @@ export const addGameToLibrary = (id, gameId, status) => async (dispatch) => {
   }
 };
 
+export const updateLibrary = (id, libraryId, status) => async (dispatch) => {
+  let formData = new FormData();
+  formData.append("libraryId", libraryId);
+  formData.append("status", status);
+
+  const res = await fetch(`/api/library/users/${id}/edit`, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(editLibrary(data));
+    return null;
+  } else if (res.status < 500) {
+    const data = await res.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
 export const eraseFromLibrary = (userId, gameId) => async (dispatch) => {
   let formData = new FormData();
   formData.append("userId", userId);
@@ -82,6 +112,8 @@ export default function reducer(state = initialState, action) {
     case GET_LIBRARY:
       return action.payload;
     case ADD_LIBRARY:
+      return action.payload;
+    case EDIT_LIBRARY:
       return action.payload;
     case DELETE_LIBRARY:
       return state;

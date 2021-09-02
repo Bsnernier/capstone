@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addGameToLibrary } from "../../store/library";
+import { updateLibrary } from "../../store/library";
 
-import "./AddLibrary.css";
+import "./LibraryEdit.css";
 
-const LibraryForm = ({ game, closeModal }) => {
+const LibraryEdit = ({ game }) => {
   const [errors, setErrors] = useState([]);
   const [status, setStatus] = useState();
 
@@ -14,14 +14,14 @@ const LibraryForm = ({ game, closeModal }) => {
   const user = useSelector((state) => state.session.user);
   const gameId = game?.id;
 
-  const submitLibrary = async (e) => {
+  const editLibrary = async (e) => {
     e.preventDefault();
-    const data = await dispatch(addGameToLibrary(user.id, gameId, status));
+    console.log(user.id, game.libraryId, status);
+    const data = await dispatch(updateLibrary(user.id, game.libraryId, status));
     if (data) {
       setErrors(data);
       return;
     } else {
-      closeModal();
       history.push("/");
       history.push(`/games/${gameId}`);
     }
@@ -37,7 +37,7 @@ const LibraryForm = ({ game, closeModal }) => {
   };
 
   return (
-    <form className="library_form" onSubmit={submitLibrary}>
+    <form className="library_form" onSubmit={editLibrary}>
       <div className="error_map">
         {errors?.map((error, ind) => (
           <div key={ind} className="error">
@@ -72,10 +72,9 @@ const LibraryForm = ({ game, closeModal }) => {
         </select>
       </div>
       <button className="library_submit" type="submit">
-        Add to Library
+        Edit status
       </button>
     </form>
   );
 };
-
-export default LibraryForm;
+export default LibraryEdit;
