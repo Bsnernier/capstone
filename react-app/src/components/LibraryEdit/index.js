@@ -22,8 +22,7 @@ const LibraryEdit = ({ game }) => {
       setErrors(data);
       return;
     } else {
-      history.push("/");
-      history.push(`/games/${gameId}`);
+      history.goBack();
     }
   };
 
