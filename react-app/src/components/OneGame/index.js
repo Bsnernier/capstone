@@ -91,21 +91,42 @@ function OneGame() {
       <div className="container">
         <div className="game">
           <img className="game_cover" src={game?.cover_url} alt="uh oh" />
-          <div className="game_title game_text">{game?.title}</div>
-          {checkLibrary(game?.library_user)}
-          {libraryStatus}
-          <div className="game_date game_text">
-            Initially Released: {toDateTime(game?.first_release_date)}
-          </div>
-          <div className="game_genre game_text">Genres: {game?.genre}</div>
-          <div className="game_platforms game_text">
-            Platforms: {game?.platforms}
-          </div>
-          <div className="game_storyline game_text">
-            Storyline: {game?.storyline}
-          </div>
-          <div className="game_summary game_text">Summary: {game?.summary}</div>
+          <table className="game_table">
+            <tbody>
+              <tr className="game_table">
+                <td className="game_title game_text">{game?.title}</td>
+              </tr>
+              <tr className="game_table">
+                {checkLibrary(game?.library_user)}
+                <td className="game_library game_text">{libraryStatus}</td>
+              </tr>
+              <tr className="game_table">
+                <td className="game_date game_text">
+                  Initially Released: {toDateTime(game?.first_release_date)}
+                </td>
+              </tr>
+              <tr className="game_table">
+                <td className="game_genre game_text">Genres: {game?.genre}</td>
+              </tr>
+              <tr className="game_table">
+                <td className="game_platforms game_text">
+                  Platforms: {game?.platforms}
+                </td>
+              </tr>
+              <tr className="game_table">
+                <td className="game_storyline game_text">
+                  Storyline: {game?.storyline}
+                </td>
+              </tr>
+              <tr className="game_table">
+                <td className="game_summary game_text">
+                  Summary: {game?.summary}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
         <div className="game_review">
           <div className="game_review_container">
             <Review className="game_review_component" gameId={gameId} />

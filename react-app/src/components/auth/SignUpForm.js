@@ -59,6 +59,12 @@ const SignUpForm = () => {
   return (
     <div className="auth_container">
       <img className="auth_logo" src={logo} alt="logo should be here" />
+      <div className="splash_summary">
+        Gamer Gazer is an app for video game hobbyists to review games and keep
+        track of their games from different platforms. The User can leave a
+        review for others to use or add games to their library and keep track of
+        completion status.
+      </div>
       <form className="auth_form" onSubmit={onSignUp}>
         <div className="auth_form_div">
           Sign Up

@@ -7,7 +7,7 @@ game_routes = Blueprint('games', __name__)
 
 @game_routes.route('/')
 def get_games():
-    games = Game.query.all()
+    games = Game.query.order_by(Game.title.asc()).all()
     return {'games': [game.to_dict() for game in games]}
 
 @game_routes.route('/<int:id>')

@@ -48,6 +48,15 @@ def seed_games():
         platforms="PC,PlayStation 4,Xbox One,Google Stadia",
         storyline="After a secretive agency in New York is invaded by an otherworldly threat, you become the new Director struggling to regain Control.\n\nControl is Jesse Faden’s story and her personal search for answers as she grows into the role of the Director. The world of Control has its own story, as do the allies Jesse meets along the way. Jesse works with other Bureau agents and discovers strange experiments and secrets.",
         summary="Control is a supernatural 3rd person action-adventure will challenge you to master the combination of supernatural abilities, modifiable loadouts and reactive environments while fighting through a deep and unpredictable world.")
+    breath = Game(
+        igdbId=7346,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.jpg',
+        first_release_date=1488499200,
+        genre="Role-playing (RPG),Adventure",
+        title='The Legend of Zelda: Breath of the Wild',
+        platforms="Wii U,Nintendo Switch",
+        storyline="Link awakes in a mysterious chamber after 100 years of slumber to find that Calamity Ganon has taken over Hyrule Castle and left Hyrule to decay and be taken over by nature.",
+        summary="In this 3D open-world entry in the Zelda series, Link is awakened from a deep slumber without his past memories in the post-apocalyptic Kingdom of Hyrule, and sets off on a journey to defeat the ancient evil Calamity Ganon. Link treks, climbs and glides through fields, forests and mountain ranges while meeting and helping friendly folk and defeating enemies in order to gather up the strength to face Ganon.")
 
 
     db.session.add(demo)
@@ -55,6 +64,8 @@ def seed_games():
     db.session.add(psycho)
     db.session.add(viking)
     db.session.add(control)
+    db.session.add(breath)
+
 
     db.session.commit()
 

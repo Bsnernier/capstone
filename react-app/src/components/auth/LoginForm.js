@@ -67,6 +67,12 @@ const LoginForm = () => {
   return (
     <div className="auth_container">
       <img className="auth_logo" src={logo} alt="logo should be here" />
+      <div className="splash_summary">
+        Gamer Gazer is an app for video game hobbyists to review games and keep
+        track of their games from different platforms. The User can leave a
+        review for others to use or add games to their library and keep track of
+        completion status.
+      </div>
       <form className="auth_form" onSubmit={onLogin}>
         <div className="auth_form_div">
           Log In
@@ -117,6 +123,16 @@ const LoginForm = () => {
           </div>
         </div>
       </form>
+      <div className="splash_links">
+        <a
+          href="https://github.com/Bsnernier/capstone"
+          class="fab fa-github-square icon"
+        ></a>
+        <a
+          href="www.linkedin.com/in/nathaniel-bernier-899110207"
+          class="fab fa-linkedin icon"
+        ></a>
+      </div>
     </div>
   );
 };

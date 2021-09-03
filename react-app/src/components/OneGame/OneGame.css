@@ -1,6 +1,7 @@
 .game {
-  position: absolute;
-  margin-top: 100px;
+  position: relative;
+  margin-top: 120px;
+  margin-left: 1%;
   border: 5px solid black;
   background-color: rgb(90, 79, 94);
   display: flex;
@@ -9,65 +10,76 @@
 }
 
 .game_cover {
+  position: relative;
   margin: 20px;
   border: 5px solid black;
+  width: 264px;
+  height: 352px;
+}
+
+.game_table {
+  background-color: rgb(90, 79, 94);
 }
 
 .game_title {
   font-size: 30px;
-  position: absolute;
+  position: relative;
   background-color: rgb(90, 79, 94);
-  left: 350px;
-  top: 20px;
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.game_library {
+  font-size: 20px;
+  position: relative;
+  background-color: rgb(90, 79, 94);
 }
 
 .game_library_button {
   font-size: 20px;
-  position: absolute;
+  position: relative;
   height: 30px;
   background-color: rgb(47, 41, 49);
-  left: 350px;
-  top: 60px;
 }
 
 .game_date {
   background-color: rgb(90, 79, 94);
-  position: absolute;
-  left: 350px;
-  top: 100px;
+  position: relative;
+  margin-left: 350px;
+  margin-top: 10px;
 }
 
 .game_genre {
   background-color: rgb(90, 79, 94);
-  position: absolute;
-  left: 350px;
-  top: 130px;
+  position: relative;
+  margin-left: 350px;
+  margin-top: 10px;
 }
 
 .game_platforms {
   background-color: rgb(90, 79, 94);
-  position: absolute;
-  left: 350px;
-  top: 160px;
+  position: relative;
+  margin-left: 350px;
+  margin-top: 10px;
 }
 
 .game_storyline {
   background-color: rgb(90, 79, 94);
-  position: absolute;
-  left: 350px;
-  top: 190px;
+  position: relative;
+  margin-left: 350px;
+  margin-top: 10px;
 }
 
 .game_summary {
   background-color: rgb(90, 79, 94);
-  position: absolute;
-  left: 350px;
-  top: 280px;
+  position: relative;
+  margin-left: 350px;
+  margin-top: 20px;
 }
 
 .game_review {
   position: relative;
-  top: 550px;
+  top: 100px;
   left: 50%;
   float: left;
 }

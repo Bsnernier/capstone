@@ -7,19 +7,20 @@ import ReviewDelete from "../ReviewDelete";
 
 import "./Review.css";
 
-function Review(props) {
+function Review({ gameId }) {
   const [reviews, setReviews] = useState();
   const [editFormDisplay, setEditFormDisplay] = useState(false);
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
+  const reviewsState = useSelector((state) => state.review.reviews);
 
   useEffect(() => {
     (async () => {
-      let test = await dispatch(getAllReviewsPerGame(props.gameId));
+      let test = await dispatch(getAllReviewsPerGame(gameId));
       setReviews(test.reviews);
     })();
-  }, [dispatch, props.gameId, editFormDisplay]);
+  }, [dispatch, gameId, editFormDisplay]);
 
   let editButton = null;
   let deleteButton = null;
@@ -40,7 +41,7 @@ function Review(props) {
           Edit
         </button>
       );
-      deleteButton = <ReviewDelete reviewId={reviewId} gameId={props.gameId} />;
+      deleteButton = <ReviewDelete reviewId={reviewId} gameId={gameId} />;
     }
   };
 
