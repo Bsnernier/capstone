@@ -129,7 +129,7 @@ const LoginForm = () => {
           class="fab fa-github-square icon"
         ></a>
         <a
-          href="www.linkedin.com/in/nathaniel-bernier-899110207"
+          href="https://www.linkedin.com/in/nathaniel-bernier-899110207"
           class="fab fa-linkedin icon"
         ></a>
       </div>
