@@ -4,7 +4,7 @@ import LogoutButton from "../auth/LogoutButton";
 import { useSelector } from "react-redux";
 import Modal from "react-modal";
 
-import logo from "../../resources/gg_logo_gif.gif";
+import logo from "../../resources/gg_large_rings.gif";
 import "./NavBar.css";
 
 const NavBar = () => {

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .auth_form_div {
@@ -126,14 +127,22 @@ input[type="password"] {
 .auth_container {
   display: flex;
   flex-direction: column;
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .auth_logo {
   position: absolute;
   height: 200px;
   width: 600px;
-  z-index: 1;
   align-self: center;
   margin-top: 50px;
   border-radius: 90px;
+}
+
+.background {
+  position: fixed;
+  top: -500px;
+  width: 2560px;
+  height: 2440px;
+  z-index: -999;
 }

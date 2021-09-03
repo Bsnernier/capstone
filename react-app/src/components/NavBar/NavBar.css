@@ -187,3 +187,7 @@
   height: screen;
   background-color: rgb(79, 78, 80, 0);
 }
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}

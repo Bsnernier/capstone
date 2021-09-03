@@ -4,7 +4,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { login, signUp } from "../../store/session";
 
 import "./styles/AuthForm.css";
-import logo from "../../resources/gg_logo_gif.gif";
+import logo from "../../resources/gg_large_rings.gif";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
