@@ -16,8 +16,6 @@ const ReviewForm = () => {
   let { gameId } = useParams();
   const history = useHistory();
 
-  console.log(reviews);
-
   useEffect(() => {});
 
   const submitReview = async (e) => {
@@ -38,7 +36,7 @@ const ReviewForm = () => {
         return;
       }
     });
-    if (errors) {
+    if (errors[0]) {
       return;
     }
     const data = await dispatch(createOneReview(gameId, text, rating));
@@ -46,6 +44,8 @@ const ReviewForm = () => {
       setErrors(data);
       return;
     }
+    history.push("/");
+    history.push(`/games/${gameId}`);
   };
 
   const updateText = (e) => {

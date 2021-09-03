@@ -21,6 +21,8 @@
   font-size: 15px;
   font-family: "Pixel";
   align-self: center;
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .games_card {
