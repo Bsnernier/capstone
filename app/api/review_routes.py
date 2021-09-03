@@ -29,6 +29,9 @@ def get_reviews(id):
 def create_review(id):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    dupeReview = Review.query.filter_by(gameId=id, userId=current_user.id).all()
+    if (dupeReview):
+        return {'errors': ["You have already submitted a review for this game"]}, 401
     if form.validate_on_submit():
         review = Review(
             userId=current_user.id,

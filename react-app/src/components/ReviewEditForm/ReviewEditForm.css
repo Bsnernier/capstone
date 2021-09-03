@@ -30,6 +30,7 @@
 
 .error_edit {
   color: red;
-  background-color: rgb(90, 79, 94);
+  background-color: rgb(47, 41, 49);
   font-size: 18px;
+  text-align: center;
 }
