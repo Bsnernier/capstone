@@ -160,8 +160,8 @@ input[type="password"] {
 }
 
 .splash_links {
-  position: absolute;
-  bottom: 0px;
+  position: relative;
+  top: 100px;
   background-color: rgb(0, 0, 0, 0);
 }
 
