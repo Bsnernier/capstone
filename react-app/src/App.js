@@ -36,7 +36,7 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <div>
+        <div className="temp_fix">
           <NavBar />
           <ProtectedRoute path="/users" exact={true}>
             <UsersList />
