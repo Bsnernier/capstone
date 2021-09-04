@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { createOneReview } from "../../store/review";
@@ -16,8 +16,6 @@ const ReviewForm = () => {
   let { gameId } = useParams();
   const history = useHistory();
 
-  useEffect(() => {});
-
   const submitReview = async (e) => {
     e.preventDefault();
     if (!text && !rating) {
@@ -33,12 +31,12 @@ const ReviewForm = () => {
     reviews?.forEach((review) => {
       if (review.userId === user.id) {
         setErrors(["You may only leave one review per game"]);
+      }
+      if (errors[0]) {
         return;
       }
     });
-    if (errors[0]) {
-      return;
-    }
+
     const data = await dispatch(createOneReview(gameId, text, rating));
     if (data) {
       setErrors(data);
