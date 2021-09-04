@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logout } from "../../store/session";
 
@@ -7,7 +7,6 @@ import "../NavBar/NavBar.css";
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.session.user);
   const history = useHistory();
 
   const onLogout = async (e) => {

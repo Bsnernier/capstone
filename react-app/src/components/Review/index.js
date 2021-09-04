@@ -13,7 +13,6 @@ function Review({ gameId }) {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
-  const reviewsState = useSelector((state) => state.review.reviews);
 
   useEffect(() => {
     (async () => {
@@ -24,7 +23,6 @@ function Review({ gameId }) {
 
   let editButton = null;
   let deleteButton = null;
-  let editContent = null;
 
   const showButton = (reviewUserId, reviewId) => {
     editButton = null;
@@ -47,12 +45,12 @@ function Review({ gameId }) {
 
   const showEditContent = (review, reviewId) => {
     if (parseInt(editFormDisplay) === reviewId && review?.userId === user?.id) {
-      return (editContent = (
+      return (
         <ReviewEditForm
           review={review}
           hideForm={() => setEditFormDisplay(false)}
         />
-      ));
+      );
     }
   };
 
