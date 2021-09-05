@@ -57,7 +57,24 @@ def seed_games():
         platforms="Wii U,Nintendo Switch",
         storyline="Link awakes in a mysterious chamber after 100 years of slumber to find that Calamity Ganon has taken over Hyrule Castle and left Hyrule to decay and be taken over by nature.",
         summary="In this 3D open-world entry in the Zelda series, Link is awakened from a deep slumber without his past memories in the post-apocalyptic Kingdom of Hyrule, and sets off on a journey to defeat the ancient evil Calamity Ganon. Link treks, climbs and glides through fields, forests and mountain ranges while meeting and helping friendly folk and defeating enemies in order to gather up the strength to face Ganon.")
-
+    vermin = Game(
+        igdbId=55189,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co20u8.jpg',
+        first_release_date=1520467200,
+        genre="Shooter,Adventure,Indie",
+        title="Warhammer: Vermintide 2",
+        platforms="PC,PlayStation 4,Xbox One",
+        storyline="The game is set in the Warhammer Fantasy universe during the early days of the End Times. The game follows the Heroes of Ubersreik from the first game against the Skaven hordes of Clan Fester and their new allies, the Rotbloods. The expansion, 'Winds of Magic', also introduced the Beastmen, a herd of Chaos mutated humanoids, in search of an object known as the 'Herdstone'",
+        summary="Warhammer: Vermintide 2 is the sequel to the critically acclaimed Vermintide. It’s time for players to return to the memorable first-person co-op experience with intense world class melee action.")
+    valley = Game(
+        igdbId=17000,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.jpg',
+        first_release_date=1456444800,
+        genre="Role-playing (RPG),Simulator,Indie",
+        title="Stardew Valley",
+        platforms="Linux,PC,Mac,Android,iOS,PlayStation Vita,PlayStation 4,Xbox One,Nintendo Switch",
+        storyline="You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won’t be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town’s most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!",
+        summary="Stardew Valley is an open-ended country-life RPG! You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won’t be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town’s most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!")
 
     db.session.add(demo)
     db.session.add(risk)
@@ -65,6 +82,8 @@ def seed_games():
     db.session.add(viking)
     db.session.add(control)
     db.session.add(breath)
+    db.session.add(vermin)
+    db.session.add(valley)
 
 
     db.session.commit()
