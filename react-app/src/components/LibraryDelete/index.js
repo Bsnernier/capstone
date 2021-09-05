@@ -32,17 +32,21 @@ const LibraryDelete = ({ game, closeDeleteModal, openEditModal }) => {
       <div className="delete_buttons">
         <button
           id="1"
-          className="delete_button"
+          className="delete_button basic-button"
           onClick={() => setEditDisplay(true)}
         >
           Edit
         </button>
-        <button id="delete" className="delete_button" type="submit">
+        <button
+          id="delete"
+          className="delete_button basic-button"
+          type="submit"
+        >
           Delete
         </button>
         <button
           id="cancel"
-          className="delete_button"
+          className="delete_button basic-button"
           onClick={closeDeleteModal}
         >
           Cancel

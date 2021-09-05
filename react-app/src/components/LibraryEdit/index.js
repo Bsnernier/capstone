@@ -65,7 +65,7 @@ const LibraryEdit = ({ game }) => {
           <option className="library_option">100% Completed</option>
         </select>
       </div>
-      <button className="library_submit" type="submit">
+      <button className="library_submit basic-button" type="submit">
         Edit status
       </button>
       <div className="error_map_modal">

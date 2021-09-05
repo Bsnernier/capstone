@@ -87,7 +87,7 @@ const ReviewEditForm = ({ review, hideForm }) => {
           <option>4</option>
           <option>5</option>
         </select>
-        <button className="edit_submit" type="submit">
+        <button className="edit_submit basic-button" type="submit">
           Update
         </button>
       </div>

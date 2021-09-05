@@ -71,7 +71,7 @@ const LibraryForm = ({ game, closeModal }) => {
           </div>
         ))}
       </div>
-      <button className="library_submit" type="submit">
+      <button className="library_submit basic-button" type="submit">
         Add to Library
       </button>
     </form>

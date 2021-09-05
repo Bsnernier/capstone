@@ -4,7 +4,6 @@
 }
 
 .games_image:hover {
-  /* border: 10px solid rgb(255, 255, 255); */
   box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
   transform: scale(1.15);
   margin-bottom: 35px;
@@ -13,6 +12,7 @@
 .games_container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 130px;
   background-color: rgb(0, 0, 0, 0);
 }
@@ -24,6 +24,7 @@
   align-self: center;
   text-align: center;
   background-color: rgb(0, 0, 0, 0);
+  width: 264px;
 }
 
 .games_card {

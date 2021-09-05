@@ -75,6 +75,33 @@ def seed_games():
         platforms="Linux,PC,Mac,Android,iOS,PlayStation Vita,PlayStation 4,Xbox One,Nintendo Switch",
         storyline="You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won’t be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town’s most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!",
         summary="Stardew Valley is an open-ended country-life RPG! You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won’t be easy. Ever since Joja Corporation came to town, the old ways of life have all but disappeared. The community center, once the town’s most vibrant hub of activity, now lies in shambles. But the valley seems full of opportunity. With a little dedication, you might just be the one to restore Stardew Valley to greatness!")
+    wich1 = Game(
+        igdbId=80,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1xrx.jpg',
+        first_release_date=1193356800,
+        genre="Role-playing (RPG)",
+        title="The Witcher",
+        platforms="PC,Mac",
+        storyline="The game begins when Geralt of Rivia, one of a few remaining \"witchers\" – traveling monster hunters for hire, gifted with unnatural powers, is transported to the witcher stronghold of Kaer Morhen by fellow witchers who had discovered him unconscious in a field. Geralt remembers almost nothing of his life before that point. He is taken to Kaer Morhen, the base of the witchers, where he meets a sorceress named Triss Merigold. The castle is attacked by a gang of bandits named Salamandra, led by a criminal known as the Professor, a mage named Savolla who controls a large, praying mantis-like monster, and another mage named Azar Javed. The witchers and the sorceress manage to slay the monster and kill Savolla, but the Professor and Azar manage to escape with the mutagens that genetically alter the witchers. After curing Triss of the wounds she received while fighting Javed, Geralt and the rest of the witchers head off in different directions in order to find information on Salamandra.",
+        summary="Based on the novel series by Andrzej Sapkowski, The Witcher follows Geralt of Rivia, an amnesiac witcher (problem solver and slayer of monsters) whose home, the Kaer Morhen citadel, is besieged by an organization called the Salamandra, who steal their valuable potions and get away. Throughout the game, Geralt must resolve people's moral dilemmas, connect the dots of his past and track down the Salamandra.")
+    gwent = Game(
+        igdbId=19474,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1u2v.jpg',
+        first_release_date=1540252800,
+        genre="Strategy,Card & Board Game",
+        title="Gwent: The Witcher Card Game",
+        platforms="PC,Android,iOS,Playstation 4,Xbox One",
+        storyline="GWENT is a competitive card game developed by CD PROJEKT RED — creators of The Witcher 3: Wild Hunt. In GWENT, gamers clash with friends in fast-paced duels that combine skill-based play with bluffing, and careful deck construction. The game is played over a best-of-three series of rounds, as players unleash their hand by slinging spells and diverse units with special abilities, and use clever tricks to deceive their opponents.",
+        summary="Join in The Witcher universe’s favorite card game! In GWENT, you clash with your friends in fast-paced duels that combine bluffing, on-the-fly decision making and careful deck construction. Play your cards right and manage a two-row battle formation as you unleash your hand over a best-of-three series of rounds. With heroes, spells and special abilities that dramatically turn the tide of battle, deception and clever tricks will be necessary parts of your arsenal.")
+    wich2 = Game(
+        igdbId=478,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1wy4.jpg',
+        first_release_date=1305590400,
+        genre="Role-playing (RPG),Adventure",
+        title="The Witcher 2: Assassins of Kings",
+        platforms="Linux,PC,Xbox 360, Mac",
+        storyline="The player is Geralt of Rivia, a professional monster slayer, a witcher. Entangled in the political turmoil that engulfed Temeria, Geralt helped quell the rebellion of the Order of the Flaming Rose. Soon after, he saved King Foltest’s life when the monarch was attacked by a witcher-like assassin. He continues to protect the king, serving as his bodyguard as Foltest strives to bring peace to his kingdom. The Order’s last bastions have yielded to the royal army, yet one more task remains - the Baroness La Valette announced her secession from the realm, and her fortress must be taken. A month after the attempted assassination, Foltest’s armies stand at the gates of La Valette Castle, preparing for a final assault. Still at Foltest’s side, Geralt is among them, unable to begin his personal quest to discover the mysterious assassin’s origin and identity.",
+        summary="This third-person dark fantasy Western RPG and sequel to The Witcher (2007), featuring multiple endings and branching narrative paths, follows the travels of Geralt of Rivia, witcher, who, after being falsely accused of regicide, sets out to clear his name and find the real killer, in a time of political turmoil and the brink of war between the imperialistic Nilfgaardian Empire and the Four Kingdoms.")
 
     db.session.add(demo)
     db.session.add(risk)
@@ -84,6 +111,9 @@ def seed_games():
     db.session.add(breath)
     db.session.add(vermin)
     db.session.add(valley)
+    db.session.add(wich1)
+    db.session.add(gwent)
+    db.session.add(wich2)
 
 
     db.session.commit()

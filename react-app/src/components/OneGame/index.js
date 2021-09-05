@@ -65,11 +65,13 @@ function OneGame() {
   };
 
   const checkLibrary = (userId) => {
+    console.log("this is what is passed in as the userId", userId);
+    console.log("this is what is passed in as the user.id", user?.id);
     if (userId === user?.id) {
       libraryStatus = (
         <button
           onClick={deleteModalIsOpen ? closeDeleteModal : openDeleteModal}
-          className="game_library_button game_text"
+          className="game_library_button game_text basic-button"
         >
           In Library
         </button>
@@ -77,7 +79,7 @@ function OneGame() {
     } else {
       libraryStatus = (
         <button
-          className="game_library_button game_text"
+          className="game_library_button game_text basic-button"
           onClick={modalIsOpen ? closeModal : openModal}
         >
           Add To Library
