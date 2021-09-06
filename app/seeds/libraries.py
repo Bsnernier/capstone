@@ -6,7 +6,7 @@ def seed_libraries():
     demo = Library(
         userId=1,
         gameId=1,
-        status='started'
+        status='Started'
         )
 
     db.session.add(demo)
