@@ -9,10 +9,37 @@ def seed_users():
         username='marnie', email='marnie@aa.io', password='password')
     bobbie = User(
         username='bobbie', email='bobbie@aa.io', password='password')
+    geralt = User(
+        username='geralt', email='geralt@aa.io', password='password')
+    raz = User(
+        username='raz', email='raz@aa.io', password='password')
+    link = User(
+        username='link', email='link@aa.io', password='password')
+    jesse = User(
+        username='jesse', email='jesse@aa.io', password='password')
+    thor = User(
+        username='thor', email='thor@aa.io', password='password')
+    engineer = User(
+        username='engineer', email='engineer@aa.io', password='password')
+    doomguy = User(
+        username='doomguy', email='doomguy@aa.io', password='password')
+    abigail = User(
+        username='abigail', email='abigail@aa.io', password='password')
+    bardin = User(
+        username='bardin', email='bardin@aa.io', password='password')
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(geralt)
+    db.session.add(raz)
+    db.session.add(link)
+    db.session.add(jesse)
+    db.session.add(thor)
+    db.session.add(engineer)
+    db.session.add(doomguy)
+    db.session.add(abigail)
+    db.session.add(bardin)
 
     db.session.commit()
 

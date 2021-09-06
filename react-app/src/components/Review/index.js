@@ -30,7 +30,7 @@ function Review({ gameId }) {
     if (user?.id === reviewUserId) {
       editButton = (
         <button
-          className="review_button"
+          className="review_button basic-button"
           onClick={(e) => {
             setEditFormDisplay(e.target.id);
           }}

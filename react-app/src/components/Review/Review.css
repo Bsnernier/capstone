@@ -45,3 +45,7 @@
 .review_button {
   background-color: rgb(90, 79, 94);
 }
+
+.review_delete_form {
+  background-color: rgb(90, 79, 94, 0);
+}

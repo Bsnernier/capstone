@@ -15,8 +15,8 @@ const ReviewDelete = ({ reviewId, gameId }) => {
   };
 
   return (
-    <form onSubmit={handleDelete}>
-      <button className="review_button" type="submit">
+    <form className="review_delete_form" onSubmit={handleDelete}>
+      <button className="review_button basic-button" type="submit">
         Delete
       </button>
     </form>

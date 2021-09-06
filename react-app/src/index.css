@@ -27,3 +27,8 @@
 .temp_fix {
   background-color: rgb(0, 0, 0, 0);
 }
+
+.basic-button {
+  border: rgb(0, 0, 0, 0);
+  border-radius: 90px;
+}

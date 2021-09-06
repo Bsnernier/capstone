@@ -97,7 +97,7 @@ const ReviewForm = () => {
           <option>4</option>
           <option>5</option>
         </select>
-        <button className="review_submit" type="submit">
+        <button className="review_submit basic-button" type="submit">
           Create
         </button>
       </div>
