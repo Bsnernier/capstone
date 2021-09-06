@@ -49,7 +49,6 @@ function OneGame() {
   useEffect(() => {
     (async () => {
       let test = await dispatch(getOneGame(gameId));
-      console.log(test);
       setGame(test[gameId]);
     })();
   }, [dispatch, gameId]);
@@ -70,7 +69,6 @@ function OneGame() {
     game?.libraries.forEach((library) => {
       libraryUserIds.push(library.userId);
     });
-    console.log("this is what is passed in as the libraries", libraryUserIds);
     if (libraryUserIds.includes(user?.id)) {
       libraryStatus = (
         <button

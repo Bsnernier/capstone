@@ -23,7 +23,6 @@ const LibraryEdit = ({ game, libraries }) => {
 
     libraries.forEach((library) => {
       if (library.userId === user.id) {
-        console.log(library.userId);
         libraryId = library.id;
       }
     });
