@@ -18,5 +18,4 @@ def get_one_game(id):
     lib_list = [library.to_dict() for library in libraries]
     game_dict = game.to_dict()
     game_dict["libraries"] = lib_list
-    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", game_dict)
     return {game.id: game_dict}

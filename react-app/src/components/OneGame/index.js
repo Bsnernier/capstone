@@ -177,6 +177,7 @@ function OneGame() {
       >
         <LibraryEdit
           game={game}
+          libraries={game?.libraries}
           closeEditModal={() => {
             closeEditModal();
           }}

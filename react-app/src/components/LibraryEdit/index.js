@@ -5,7 +5,7 @@ import { updateLibrary } from "../../store/library";
 
 import "./LibraryEdit.css";
 
-const LibraryEdit = ({ game }) => {
+const LibraryEdit = ({ game, libraries }) => {
   const [errors, setErrors] = useState([]);
   const [status, setStatus] = useState();
 
@@ -15,11 +15,19 @@ const LibraryEdit = ({ game }) => {
 
   const editLibrary = async (e) => {
     e.preventDefault();
+    let libraryId = null;
     if (status === undefined) {
       setErrors(["Not a valid choice"]);
       return;
     }
-    const data = await dispatch(updateLibrary(user.id, game.libraryId, status));
+
+    libraries.forEach((library) => {
+      if (library.userId === user.id) {
+        console.log(library.userId);
+        libraryId = library.id;
+      }
+    });
+    const data = await dispatch(updateLibrary(user.id, libraryId, status));
     if (data) {
       setErrors(data);
       return;
