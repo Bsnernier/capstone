@@ -49,6 +49,7 @@ function OneGame() {
   useEffect(() => {
     (async () => {
       let test = await dispatch(getOneGame(gameId));
+      console.log(test);
       setGame(test[gameId]);
     })();
   }, [dispatch, gameId]);
@@ -65,9 +66,12 @@ function OneGame() {
   };
 
   const checkLibrary = (userId) => {
-    console.log("this is what is passed in as the userId", userId);
-    console.log("this is what is passed in as the user.id", user?.id);
-    if (userId === user?.id) {
+    let libraryUserIds = [];
+    game?.libraries.forEach((library) => {
+      libraryUserIds.push(library.userId);
+    });
+    console.log("this is what is passed in as the libraries", libraryUserIds);
+    if (libraryUserIds.includes(user?.id)) {
       libraryStatus = (
         <button
           onClick={deleteModalIsOpen ? closeDeleteModal : openDeleteModal}
