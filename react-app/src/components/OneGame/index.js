@@ -66,17 +66,24 @@ function OneGame() {
 
   const checkLibrary = (userId) => {
     let libraryUserIds = [];
+    let userLibraryStatus = [];
     game?.libraries.forEach((library) => {
       libraryUserIds.push(library.userId);
+      userLibraryStatus.push(library.status);
     });
     if (libraryUserIds.includes(user?.id)) {
       libraryStatus = (
-        <button
-          onClick={deleteModalIsOpen ? closeDeleteModal : openDeleteModal}
-          className="game_library_button game_text basic-button"
-        >
-          In Library
-        </button>
+        <div className="game_library_div">
+          <button
+            onClick={deleteModalIsOpen ? closeDeleteModal : openDeleteModal}
+            className="game_library_button game_text basic-button"
+          >
+            In Library
+          </button>
+          <div className="user_library_status">
+            Status: {userLibraryStatus[0]}
+          </div>
+        </div>
       );
     } else {
       libraryStatus = (
