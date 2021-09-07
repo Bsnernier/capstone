@@ -6,10 +6,34 @@ def seed_libraries():
     demo = Library(
         userId=1,
         gameId=1,
+        status='100% Completed'
+        )
+    psycho = Library(
+        userId=1,
+        gameId=3,
+        status='Beat the Game'
+        )
+    osrs = Library(
+        userId=1,
+        gameId=16,
         status='Started'
+        )
+    doom = Library(
+        userId=1,
+        gameId=18,
+        status='Just Purchased'
+        )
+    guild = Library(
+        userId=1,
+        gameId=19,
+        status='Halfway Through'
         )
 
     db.session.add(demo)
+    db.session.add(psycho)
+    db.session.add(osrs)
+    db.session.add(doom)
+    db.session.add(guild)
 
     db.session.commit()
 
