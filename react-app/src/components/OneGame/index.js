@@ -69,7 +69,9 @@ function OneGame() {
     let userLibraryStatus = [];
     game?.libraries.forEach((library) => {
       libraryUserIds.push(library.userId);
-      userLibraryStatus.push(library.status);
+      if (libraryUserIds.includes(user?.id)) {
+        userLibraryStatus.push(library.status);
+      }
     });
     if (libraryUserIds.includes(user?.id)) {
       libraryStatus = (
