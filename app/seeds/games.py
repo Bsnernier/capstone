@@ -102,6 +102,78 @@ def seed_games():
         platforms="Linux,PC,Xbox 360, Mac",
         storyline="The player is Geralt of Rivia, a professional monster slayer, a witcher. Entangled in the political turmoil that engulfed Temeria, Geralt helped quell the rebellion of the Order of the Flaming Rose. Soon after, he saved King Foltest’s life when the monarch was attacked by a witcher-like assassin. He continues to protect the king, serving as his bodyguard as Foltest strives to bring peace to his kingdom. The Order’s last bastions have yielded to the royal army, yet one more task remains - the Baroness La Valette announced her secession from the realm, and her fortress must be taken. A month after the attempted assassination, Foltest’s armies stand at the gates of La Valette Castle, preparing for a final assault. Still at Foltest’s side, Geralt is among them, unable to begin his personal quest to discover the mysterious assassin’s origin and identity.",
         summary="This third-person dark fantasy Western RPG and sequel to The Witcher (2007), featuring multiple endings and branching narrative paths, follows the travels of Geralt of Rivia, witcher, who, after being falsely accused of regicide, sets out to clear his name and find the real killer, in a time of political turmoil and the brink of war between the imperialistic Nilfgaardian Empire and the Four Kingdoms.")
+    golf = Game(
+        igdbId=133939,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co28j6.jpg',
+        first_release_date=1597968000,
+        genre="Simulator,Sport",
+        title="PGA TOUR 2K21",
+        platforms="PC,Playstation 4,Xbox One,Nintendo Switch,Google Stadia",
+        storyline="In PGA TOUR 2K21, you can create your own character and climb the ranks of the PGA Tour",
+        summary="Play against the pros. Play with your crew. In PGA TOUR 2K21, you can play by the rules or create your own featuring a new PGA TOUR Career Mode, licensed courses and more!")
+    dark1 = Game(
+        igdbId=81085,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co2uro.jpg',
+        first_release_date=1527033600,
+        genre="Role-playing (RPG),Hack and slash/Beat 'em up,Adventure",
+        title="Dark Souls: Remastered",
+        platforms="PC,Playstation 4,Xbox One,Nintendo Switch",
+        storyline="Then, there was fire. Re-experience the genre-defining game that started it all. Return to Lordran in the beautifully remastered game in high definition, 60 fps with single-player or online multiplayer with dedicated servers. Includes the Artorias of the Abyss DLC",
+        summary="Dark Souls Remastered is a remastered version of the original game Dark Souls. The updated version of the game features graphical enhancements as well as an expanded online mode.")
+    dark2 = Game(
+        igdbId=2368,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co2eoo.jpg',
+        first_release_date=1394496000,
+        genre="Role-playing (RPG),Adventure",
+        title="Dark Souls II",
+        platforms="PC,Playstation 3,Xbox 360",
+        storyline="Prepare to Die again. The second installment of the series includes the base Dark Souls II plus all three DLCs: Crown of the Sunken King, Crown of the Old Iron King, and Crown of the Ivory King.",
+        summary="The unique old-school action rpg experience captivated imaginations of gamers worldwide with incredible challenge and intense emotional reward. Dark Souls II brings the franchise’s renowned difficulty & gripping gameplay innovations to both single and multiplayer experiences. Immerse yourself into mind-bending environments filled with new twisted monsters and deadly bosses that could only come from the imagination of from software. A wide range of threats will prey on human senses & phobias - auditory hallucinations, vertigo, acrophobia, etc.")
+    dark3 = Game(
+        igdbId=11133,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1vcf.jpg',
+        first_release_date=1458777600,
+        genre="Role-playing (RPG),Adventure",
+        title="Dark Souls III",
+        platforms="PC,Playstation 4,Xbox One",
+        storyline="Now only embers remain… Dark Souls III is the final journey in the series where players can fight through intense combat solo or team up in co-op or PvP multiplayer. Includes the award-winning game and both DLC chapters: Ashes of Ariandel and The Ringed City.",
+        summary="As fires fade and the world falls into ruin, developer FROMSOFTWARE and director Hidetaka Miyazaki continue their critically-acclaimed and genre-defining series with Dark Souls III. Fans and newcomers alike will get lost in the games hallmark rewarding gameplay and immersive graphics. Now only embers remain…")
+    rune = Game(
+        igdbId=79824,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1mo1.jpg',
+        first_release_date=1361491200,
+        genre="Role-playing (RPG)",
+        title="Old School RuneScape",
+        platforms="PC,Mac,Android,iOS",
+        storyline="Go back to the distant lands of 2007 and relive the experience of getting a cat, building a house, and AFK training while you do more important things.",
+        summary="Relive the challenging levelling system and risk-it-all PvP of the biggest retro styled MMO. Play with millions of other players in this piece of online gaming heritage where the community controls the development so the game is truly what you want it to be!")
+    mario = Game(
+        igdbId=26758,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxf.jpg',
+        first_release_date=1509062400,
+        genre="Platform,Adventure",
+        title="Super Mario Odyssey",
+        platforms="Nintendo Switch",
+        storyline="Peach is in trouble, again. Mario must save her, again. Bowser is behind it, again. Mario talks to his hat so that's new.",
+        summary="Explore incredible places far from the Mushroom Kingdom as you join Mario and his new ally Cappy on a massive, globe-trotting 3D adventure. Use amazing new abilities, like the power to capture and control objects, animals, and enemies to collect Power Moons so you can power up the Odyssey airship and save Princess Peach from Bowser’s wedding plans!")
+    doom = Game(
+        igdbId=103298,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co3p5n.jpg',
+        first_release_date=1584662400,
+        genre="Shooter",
+        title="DOOM Eternal",
+        platforms="PC,Playstation 4,Xbox One,Nintendo Switch,PlayStation 5,Xbox Series X|S,Google Stadia",
+        storyline="Some time after the events on Mars, Earth has been overrun by demonic forces, wiping out 60% of the planet's population, under the now-corrupted Union Aerospace Corporation (UAC). What remains of humanity has either fled Earth or have joined the Armored Response Coalition, a resistance movement formed to stop the invasion, which has gone into hiding after suffering heavy losses. The Doom Slayer, having previously been betrayed and teleported away by Dr. Samuel Hayden, returns with a satellite fortress controlled by the AI VEGA to quell the demonic invasion by killing the Hell Priests: Deags Nilox, Ranak, and Grav. The priests serve an angelic being known as the Khan Maykr who seeks to sacrifice mankind for her own race's survival. The Slayer teleports to a destroyed city and kills Deag Nilox, but the Khan Maykr transports the two remaining priests to unknown locations, forcing the Slayer to continue searching.",
+        summary="Hell’s armies have invaded Earth. Become the Slayer in an epic single-player campaign to conquer demons across dimensions and stop the final destruction of humanity. The only thing they fear... is you.\n\nSet to an all-new pulse pounding soundtrack composed by Mick Gordon, take your vengeance against the forces of Hell as you slay new and classic demons with powerful weapons and abilities. Experience the ultimate combination of speed and power with the next leap in push-forward, first-person combat.")
+    guild = Game(
+        igdbId=234,
+        cover_url='https://images.igdb.com/igdb/image/upload/t_cover_big/co2smt.jpg',
+        first_release_date=1117065600,
+        genre="Role-playing (RPG),Strategy,Adventure",
+        title="Guild Wars",
+        platforms="PC",
+        storyline="Across Tyria, the human kingdoms are under attack by the vicious Charr. As a young hero caught between the powerful will of King Adelbern and the rebellious Prince Rurik, you are called upon to defend humanity. Will you become an instrument of the ancient prophecy or be crushed beneath it? Rally your strength and the power of your guild to establish your legend.",
+        summary="In a world torn by conflict, where human kingdoms are all but destroyed and guilds sacrifice all for a chance to control the Hall of Heroes, a champion must rise from the ruins of a once-proud land to lead refugees from the ashes and fulfill an ancient prophecy. Will that hero be you?")
 
     db.session.add(demo)
     db.session.add(risk)
@@ -114,6 +186,14 @@ def seed_games():
     db.session.add(wich1)
     db.session.add(gwent)
     db.session.add(wich2)
+    db.session.add(golf)
+    db.session.add(dark1)
+    db.session.add(dark2)
+    db.session.add(dark3)
+    db.session.add(rune)
+    db.session.add(mario)
+    db.session.add(doom)
+    db.session.add(guild)
 
 
     db.session.commit()

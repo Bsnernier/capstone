@@ -31,7 +31,8 @@ const LibraryEdit = ({ game, libraries }) => {
       setErrors(data);
       return;
     } else {
-      history.goBack();
+      history.push("/");
+      history.push(`/games/${game?.id}`);
     }
   };
 

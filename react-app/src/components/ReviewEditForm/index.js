@@ -6,7 +6,7 @@ import "./ReviewEditForm.css";
 
 const ReviewEditForm = ({ review, hideForm }) => {
   const [errors, setErrors] = useState([]);
-  const [text, setText] = useState("");
+  const [text, setText] = useState();
   const [rating, setRating] = useState();
 
   const dispatch = useDispatch();
