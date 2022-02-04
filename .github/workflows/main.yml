@@ -6,8 +6,6 @@ on:
       - main
 jobs:
   build:
-    docker:
-      web: ../../Dockerfile
     runs-on: ubuntu-latest
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
