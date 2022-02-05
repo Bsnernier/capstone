@@ -1,1 +1,1 @@
-web: gunicorn capstone:app
+web: gunicorn config:app
