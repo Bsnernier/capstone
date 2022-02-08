@@ -35,19 +35,13 @@ const NavBar = () => {
   const showButton = () => {
     if (user?.id) {
       logButton = (
-        <button
-          className="navbar_profile"
-          onClick={modalIsOpen ? closeProfileModal : openProfileModal}
-        >
+        <button className="navbar_profile" onClick={modalIsOpen ? closeProfileModal : openProfileModal}>
           {user.username}
         </button>
       );
     } else if (!user?.id) {
       logButton = (
-        <button
-          className="navbar_profile"
-          onClick={logModalIsOpen ? closeLogModal : openLogModal}
-        >
+        <button className="navbar_profile" onClick={logModalIsOpen ? closeLogModal : openLogModal}>
           Log In / Sign Up
         </button>
       );
@@ -58,12 +52,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar_div">
         <ul className="navbar_ul">
-          <NavLink
-            to="/"
-            exact={true}
-            activeClassName="active"
-            className="navbar_home"
-          >
+          <NavLink to="/" exact={true} activeClassName="active" className="navbar_home">
             <img className="navbar_logo" src={logo} alt="logo should be here" />
           </NavLink>
           {showButton()}
@@ -79,10 +68,7 @@ const NavBar = () => {
         ariaHideApp={false}
         shouldCloseOnOverlayClick={true}
       >
-        <button
-          className="navbar_modal_link"
-          onClick={() => history.push("/library")}
-        >
+        <button className="navbar_modal_link" onClick={() => history.push("/library")}>
           Library
         </button>
         <LogoutButton />
@@ -96,20 +82,10 @@ const NavBar = () => {
         ariaHideApp={false}
         shouldCloseOnOverlayClick={true}
       >
-        <NavLink
-          to="/login"
-          exact={true}
-          activeClassName="active"
-          className="navbar_modal_link"
-        >
+        <NavLink to="/login" exact={true} activeClassName="active" className="navbar_modal_link">
           Log In
         </NavLink>
-        <NavLink
-          to="/sign-up"
-          exact={true}
-          activeClassName="active"
-          className="navbar_modal_link"
-        >
+        <NavLink to="/sign-up" exact={true} activeClassName="active" className="navbar_modal_link">
           Sign Up
         </NavLink>
       </Modal>

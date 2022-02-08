@@ -107,6 +107,7 @@
   text-align: center;
   font-size: 25px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .navbar_profile:hover {
@@ -136,6 +137,9 @@
 }
 
 .navbar_modal_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
   width: 100px;
   border-radius: 10px;
