@@ -70,6 +70,14 @@ input[type="text"] {
   background-color: white;
 }
 
+input[type="email"] {
+  padding-top: 20px;
+  padding-left: 15px;
+  font-size: 18px;
+  width: 300px;
+  background-color: white;
+}
+
 input[type="password"] {
   padding-top: 20px;
   padding-left: 15px;
@@ -88,6 +96,7 @@ input[type="password"] {
   margin: 0px 6px;
   border-radius: 5px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .auth_button:hover {

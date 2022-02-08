@@ -68,10 +68,9 @@ const LoginForm = () => {
     <div className="auth_container">
       <img className="auth_logo" src={logo} alt="logo should be here" />
       <div className="splash_summary">
-        Gamer Gazer is an app for video game hobbyists to review games and keep
-        track of their games from different platforms. The User can leave a
-        review for others to use or add games to their library and keep track of
-        completion status.
+        Gamer Gazer is an app for video game hobbyists to review games and keep track of their games from
+        different platforms. The User can leave a review for others to use or add games to their library and
+        keep track of completion status.
       </div>
       <form className="auth_form" onSubmit={onLogin}>
         <div className="auth_form_div">
@@ -89,9 +88,10 @@ const LoginForm = () => {
               <input
                 className="auth_input login_email_input"
                 name="email"
-                type="text"
+                type="email"
                 value={email}
                 onChange={updateEmail}
+                required
               />
             </label>
           </div>
@@ -104,6 +104,7 @@ const LoginForm = () => {
                 type="password"
                 value={password}
                 onChange={updatePassword}
+                required
               />
             </label>
           </div>
@@ -111,10 +112,7 @@ const LoginForm = () => {
             Login
           </button>
           <div className="auth_button_div">
-            <button
-              className="auth_button"
-              onClick={() => history.push("/sign-up")}
-            >
+            <button className="auth_button" onClick={() => history.push("/sign-up")}>
               Sign Up
             </button>
             <button className="auth_button" onClick={demoLogin}>
