@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 
 import { getAllReviewsPerGame } from "../../store/review";
 import ReviewEditForm from "../ReviewEditForm";
@@ -45,12 +46,7 @@ function Review({ gameId }) {
 
   const showEditContent = (review, reviewId) => {
     if (parseInt(editFormDisplay) === reviewId && review?.userId === user?.id) {
-      return (
-        <ReviewEditForm
-          review={review}
-          hideForm={() => setEditFormDisplay(false)}
-        />
-      );
+      return <ReviewEditForm review={review} hideForm={() => setEditFormDisplay(false)} />;
     }
   };
 
@@ -63,10 +59,15 @@ function Review({ gameId }) {
             <div className="review_rating">Rating: {review?.rating}</div>
           </div>
           <div className="review_text">{review?.text}</div>
-          <div className="review_buttons">
-            {showButton(review?.userId, review?.id)}
-            {editButton}
-            {deleteButton}
+          <div className="review_date_and_buttons">
+            <div className="review_date">
+              Submitted: {moment(review?.date).format("h:mm a, MMM Do YYYY")}
+            </div>
+            <div className="review_buttons">
+              {showButton(review?.userId, review?.id)}
+              {editButton}
+              {deleteButton}
+            </div>
           </div>
           {showEditContent(review, review?.id)}
         </div>
