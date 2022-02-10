@@ -134,6 +134,7 @@
   border-radius: 10px;
   border: 2px solid rgb(8, 36, 13);
   box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+  cursor: default;
 }
 
 .navbar_modal_link {
@@ -147,6 +148,7 @@
   border: 2px solid rgb(8, 36, 13);
   box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
   font-size: 18px;
+  cursor: pointer;
 }
 
 .navbar_modal_link:hover {
@@ -182,6 +184,7 @@
   border-radius: 10px;
   border: 2px solid rgb(8, 36, 13);
   box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+  cursor: default;
 }
 
 .navbar-log-modal__overlay {

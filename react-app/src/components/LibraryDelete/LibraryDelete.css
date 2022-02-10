@@ -25,4 +25,5 @@
 
 .delete_button {
   background-color: rgb(47, 41, 49);
+  cursor: pointer;
 }

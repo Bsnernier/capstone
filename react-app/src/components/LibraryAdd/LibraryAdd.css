@@ -41,6 +41,7 @@
   width: 100px;
   left: 370px;
   background-color: rgb(47, 41, 49);
+  cursor: pointer;
 }
 
 .library_status_label {
@@ -49,10 +50,12 @@
 
 .library_status_input {
   background-color: rgb(47, 41, 49);
+  cursor: pointer;
 }
 
 .library_option {
   background-color: rgb(47, 41, 49);
+  cursor: pointer;
 }
 
 .error_map_modal {
