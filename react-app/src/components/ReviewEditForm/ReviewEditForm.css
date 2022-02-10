@@ -11,6 +11,11 @@
 .edit_rating_label {
   background-color: rgb(90, 79, 94);
   font-size: 18px;
+  margin: 3px;
+}
+
+.edit_text {
+  background-color: rgb(90, 79, 94);
 }
 
 .edit_text_input {
@@ -20,17 +25,21 @@
   color: black;
 }
 
-.edit_submit {
+.edit_rating_input {
   background-color: rgb(47, 41, 49);
+  margin: 3px;
+  cursor: pointer;
 }
 
-/* .error_map {
-  background-color: rgb(90, 79, 94);
-} */
+.edit_submit {
+  background-color: rgb(47, 41, 49);
+  margin: 3px;
+  cursor: pointer;
+}
 
 .error_edit {
   color: red;
-  background-color: rgb(47, 41, 49);
+  background-color: rgb(90, 79, 94);
   font-size: 18px;
   text-align: center;
 }
