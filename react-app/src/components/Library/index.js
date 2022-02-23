@@ -7,6 +7,7 @@ import "./Library.css";
 
 function Library() {
   const [shelf, setShelf] = useState();
+  const [genreWithArr, setGenreWithArr] = useState();
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
