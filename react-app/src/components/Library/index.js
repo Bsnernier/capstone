@@ -21,6 +21,8 @@ function Library() {
 
   return (
     <div className="games_container">
+      {console.log(shelf)}
+      <div>Adventure</div>
       {shelf?.map((game) => (
         <div className="games_card" key={game?.id}>
           <a className="games_link" href={`/games/${game?.gameId}`}>

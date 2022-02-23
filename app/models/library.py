@@ -20,5 +20,6 @@ class Library(db.Model):
             'gameId': self.gameId,
             'status': self.status,
             'cover': self.game.cover_url,
-            'title': self.game.title
+            'title': self.game.title,
+            'genres': self.game.genre
         }
