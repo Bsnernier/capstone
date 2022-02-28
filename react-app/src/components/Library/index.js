@@ -48,30 +48,30 @@ function Library() {
   };
 
   return (
-    <div id="1" className="genres_container">
-      {genreArr?.map((genre) => (
-        <div id="2" className="games_container">
-          <div>{genre}</div>
-          {console.log(shelf, genre)}
-          {shelf?.map((game) => (
-            <div>{checkGenre(genre, game)}</div>
-          ))}
-        </div>
-      ))}
-      {/* <div className="games_container">
-        {console.log(shelf)}
-        <div>Adventure</div>
-        {shelf?.map((game) => (
-          <div className="games_card" key={game?.id}>
-            <a className="games_link" href={`/games/${game?.gameId}`}>
-              <img className="games_image" src={game?.cover} alt="uh oh" />
-            </a>
-            <div className="games_title">{game?.title}</div>
-            <div className="games_title">Progress: {game?.status}</div>
-          </div>
-        ))}
-      </div> */}
-    </div>
+    // <div id="1" className="genres_container">
+    //   {genreArr?.map((genre) => (
+    //     <div id="2" className="games_container">
+    //       <div>{genre}</div>
+    //       {console.log(shelf, genre)}
+    //       {shelf?.map((game) => (
+    //         <div>{checkGenre(genre, game)}</div>
+    //       ))}
+    //     </div>
+    //   ))}
+    //   {/* <div className="games_container">
+    //     {console.log(shelf)}
+    //     <div>Adventure</div>
+    //     {shelf?.map((game) => (
+    //       <div className="games_card" key={game?.id}>
+    //         <a className="games_link" href={`/games/${game?.gameId}`}>
+    //           <img className="games_image" src={game?.cover} alt="uh oh" />
+    //         </a>
+    //         <div className="games_title">{game?.title}</div>
+    //         <div className="games_title">Progress: {game?.status}</div>
+    //       </div>
+    //     ))}
+    //   </div> */}
+    // </div>
   );
 }
 export default Library;
