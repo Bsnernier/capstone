@@ -54,10 +54,11 @@ function Library() {
           <div>{genre}</div>
           {console.log(shelf, genre)}
           {shelf?.map((game) => (
-            <div>{checkGenre(genre, game)}</div>
+            {checkGenre(genre, game)}
           ))}
         </div>
       ))}
+      {/* Old Game Container for Reference */}
       {/* <div className="games_container">
         {console.log(shelf)}
         <div>Adventure</div>
