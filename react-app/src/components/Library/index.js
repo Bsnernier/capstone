@@ -9,6 +9,19 @@ function Library() {
   const [shelf, setShelf] = useState();
   const [genreWithArr, setGenreWithArr] = useState();
 
+  const genreArr = [
+    "Adventure",
+    "Card & Board Game",
+    "Hack and slash/Beat 'em up",
+    "Platform",
+    "Indie",
+    "Role-playing (RPG)",
+    "Shooter",
+    "Simulator",
+    "Sport",
+    "Strategy",
+  ];
+
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
 
@@ -19,11 +32,10 @@ function Library() {
     })();
   }, [dispatch, user.id]);
 
-  return (
-    <div className="games_container">
-      {console.log(shelf)}
-      <div>Adventure</div>
-      {shelf?.map((game) => (
+  const checkGenre = (genre, game) => {
+    console.log("genres: ", game?.genres);
+    if (game?.genres.includes(genre)) {
+      return (
         <div className="games_card" key={game?.id}>
           <a className="games_link" href={`/games/${game?.gameId}`}>
             <img className="games_image" src={game?.cover} alt="uh oh" />
@@ -31,7 +43,34 @@ function Library() {
           <div className="games_title">{game?.title}</div>
           <div className="games_title">Progress: {game?.status}</div>
         </div>
+      );
+    }
+  };
+
+  return (
+    <div id="1" className="genres_container">
+      {genreArr?.map((genre) => (
+        <div id="2" className="games_container">
+          <div>{genre}</div>
+          {console.log(shelf, genre)}
+          {shelf?.map((game) => (
+            <div>{checkGenre(genre, game)}</div>
+          ))}
+        </div>
       ))}
+      {/* <div className="games_container">
+        {console.log(shelf)}
+        <div>Adventure</div>
+        {shelf?.map((game) => (
+          <div className="games_card" key={game?.id}>
+            <a className="games_link" href={`/games/${game?.gameId}`}>
+              <img className="games_image" src={game?.cover} alt="uh oh" />
+            </a>
+            <div className="games_title">{game?.title}</div>
+            <div className="games_title">Progress: {game?.status}</div>
+          </div>
+        ))}
+      </div> */}
     </div>
   );
 }
