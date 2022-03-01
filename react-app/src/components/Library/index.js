@@ -33,7 +33,6 @@ function Library() {
   }, [dispatch, user.id]);
 
   const checkGenre = (genre, game) => {
-    console.log("genres: ", game?.genres);
     if (game?.genres.includes(genre)) {
       return (
         <div className="games_card" key={game?.id}>
@@ -53,9 +52,7 @@ function Library() {
         <div id="2" className="games_container">
           <div>{genre}</div>
           {console.log(shelf, genre)}
-          {shelf?.map((game) => (
-            {checkGenre(genre, game)}
-          ))}
+          <div>{shelf?.map((game) => checkGenre(genre, game) && <div>{checkGenre(genre, game)}</div>)}</div>
         </div>
       ))}
       {/* Old Game Container for Reference */}
