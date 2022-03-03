@@ -1,0 +1,31 @@
+.genre_title {
+  margin-left: 40px;
+  font-size: 50px;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.genres_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 130px;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.lib_games_container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  flex-wrap: wrap;
+  /* margin-top: 130px; */
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.card_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  /* margin-top: 130px; */
+  background-color: rgb(0, 0, 0, 0);
+}

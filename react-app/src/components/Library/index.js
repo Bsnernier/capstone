@@ -49,10 +49,14 @@ function Library() {
   return (
     <div id="1" className="genres_container">
       {genreArr?.map((genre) => (
-        <div id="2" className="games_container">
-          <div>{genre}</div>
+        <div id="2" className="lib_games_container">
+          <div id={genre} className="genre_title">
+            {genre}
+          </div>
           {console.log(shelf, genre)}
-          <div>{shelf?.map((game) => checkGenre(genre, game) && <div>{checkGenre(genre, game)}</div>)}</div>
+          <div className="card_container">
+            {shelf?.map((game) => checkGenre(genre, game) && <div>{checkGenre(genre, game)}</div>)}
+          </div>
         </div>
       ))}
       {/* Old Game Container for Reference */}
