@@ -53,7 +53,6 @@ function Library() {
           <div id={genre} className="genre_title">
             {genre}
           </div>
-          {console.log(shelf, genre)}
           <div className="card_container">
             {shelf?.map((game) => checkGenre(genre, game) && <div>{checkGenre(genre, game)}</div>)}
           </div>
