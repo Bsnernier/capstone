@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     justify-content: center;
+    position: relative;
     margin: 20px;
     background-color: rgb(0, 0, 0, 0);
 }
