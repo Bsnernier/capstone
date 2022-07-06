@@ -1,35 +1,36 @@
 .games_image {
-  transition: transform 0.5s, box-shadow 0.5s, margin-bottom 0.5s;
-  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+    transition: transform 0.5s, box-shadow 0.5s, margin-bottom 0.5s;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
 }
 
 .games_image:hover {
-  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
-  transform: scale(1.15);
-  margin-bottom: 35px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    transform: scale(1.15);
+    margin-bottom: 35px;
 }
 
 .games_container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 130px;
-  background-color: rgb(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 130px;
+    background-color: rgb(0, 0, 0, 0);
 }
 
 .games_title {
-  position: relative;
-  font-size: 15px;
-  font-family: "Pixel";
-  align-self: center;
-  text-align: center;
-  background-color: rgb(0, 0, 0, 0);
-  width: 264px;
+    position: relative;
+    font-size: 15px;
+    font-family: "Pixel";
+    align-self: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0);
+    width: 264px;
 }
 
 .games_card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0);
+    padding-bottom: 15px;
 }
