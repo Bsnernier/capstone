@@ -10,53 +10,55 @@ import User from "./components/User";
 import Games from "./components/Games";
 import OneGame from "./components/OneGame";
 import Library from "./components/Library";
+import Footer from "./components/Footer";
 import { authenticate } from "./store/session";
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
-  const dispatch = useDispatch();
+    const [loaded, setLoaded] = useState(false);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    (async () => {
-      await dispatch(authenticate());
-      setLoaded(true);
-    })();
-  }, [dispatch]);
+    useEffect(() => {
+        (async () => {
+            await dispatch(authenticate());
+            setLoaded(true);
+        })();
+    }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
+    if (!loaded) {
+        return null;
+    }
 
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <div className="temp_fix">
-          <NavBar />
-          <ProtectedRoute path="/users" exact={true}>
-            <UsersList />
-          </ProtectedRoute>
-          <ProtectedRoute path="/games/:gameId" exact={true}>
-            <OneGame />
-          </ProtectedRoute>
-          <ProtectedRoute path="/users/:userId" exact={true}>
-            <User />
-          </ProtectedRoute>
-          <ProtectedRoute path="/library" exact={true}>
-            <Library />
-          </ProtectedRoute>
-          <Route path="/" exact={true}>
-            <Games />
-          </Route>
-        </div>
-      </Switch>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/login" exact={true}>
+                    <LoginForm />
+                </Route>
+                <Route path="/sign-up" exact={true}>
+                    <SignUpForm />
+                </Route>
+                <div className="temp_fix">
+                    <NavBar />
+                    <ProtectedRoute path="/users" exact={true}>
+                        <UsersList />
+                    </ProtectedRoute>
+                    <ProtectedRoute path="/games/:gameId" exact={true}>
+                        <OneGame />
+                    </ProtectedRoute>
+                    <ProtectedRoute path="/users/:userId" exact={true}>
+                        <User />
+                    </ProtectedRoute>
+                    <ProtectedRoute path="/library" exact={true}>
+                        <Library />
+                    </ProtectedRoute>
+                    <Route path="/" exact={true}>
+                        <Games />
+                    </Route>
+                    <Footer />
+                </div>
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;
