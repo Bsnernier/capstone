@@ -40,9 +40,7 @@ function Library() {
             }
         });
 
-        console.log(gamesWithGenre);
         if (gamesWithGenre.length === 0) {
-            // console.log(gamesWithGenre);
             return " ";
         } else {
             return (
