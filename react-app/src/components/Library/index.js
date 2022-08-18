@@ -7,7 +7,6 @@ import "./Library.css";
 
 function Library() {
     const [shelf, setShelf] = useState();
-    const [genreWithArr, setGenreWithArr] = useState();
 
     const genreArr = [
         "Adventure",
@@ -55,7 +54,10 @@ function Library() {
                     </div>
                     <div className="card_container">
                         {shelf?.map(
-                            (game) => checkGenre(genre, game) && <div>{checkGenre(genre, game)}</div>
+                            (game) =>
+                                checkGenre(genre, game) && (
+                                    <div key={game?.id}>{checkGenre(genre, game)}</div>
+                                )
                         )}
                     </div>
                 </div>
