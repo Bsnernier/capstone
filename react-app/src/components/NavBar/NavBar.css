@@ -198,3 +198,47 @@
 .ReactModal__Overlay {
     z-index: 1000;
 }
+
+.profile_dropdown_user {
+    position: absolute;
+    /* top: 120px; */
+    right: -10px;
+    /* padding: 10px 20px; */
+    background: #fff;
+    width: 230px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.profile_dropdown_guest {
+    position: absolute;
+    /* top: 120px; */
+    right: -10px;
+    /* padding: 10px 20px; */
+    background: #fff;
+    width: 230px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.profile_dropdown_user.active {
+    top: 40px;
+    visibility: visible;
+    /* -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc; */
+    box-shadow: 0 0 10px rgb(200, 200, 200);
+    opacity: 1;
+}
+
+.profile_dropdown_guest.active {
+    top: 40px;
+    visibility: visible;
+    /* -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc; */
+    box-shadow: 0 0 10px rgb(200, 200, 200);
+    opacity: 1;
+}

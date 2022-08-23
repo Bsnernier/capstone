@@ -6,20 +6,20 @@ import { logout } from "../../store/session";
 import "../NavBar/NavBar.css";
 
 const LogoutButton = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
-  const onLogout = async (e) => {
-    await dispatch(logout());
-    history.push("/library");
-    history.push("/");
-  };
+    const onLogout = async (e) => {
+        await dispatch(logout());
+        history.push("/library");
+        history.push("/");
+    };
 
-  return (
-    <button className="navbar_modal_link" onClick={onLogout}>
-      Logout
-    </button>
-  );
+    return (
+        <button id="drop4" className="navbar_modal_link" onClick={onLogout}>
+            Logout
+        </button>
+    );
 };
 
 export default LogoutButton;
