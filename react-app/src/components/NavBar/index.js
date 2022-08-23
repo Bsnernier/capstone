@@ -9,6 +9,36 @@ import "./NavBar.css";
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const user = useSelector((state) => state.session.user);
+    const history = useHistory();
+
+    let logButton = null;
+    let dropdownMenu = null;
+
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            if (
+                e.target.id === "profile_dropdown" ||
+                e.target.id === "drop1" ||
+                e.target.id === "drop2" ||
+                e.target.id === "drop3" ||
+                e.target.id === "drop4" ||
+                e.target.id === "drop5"
+            ) {
+                return;
+            } else {
+                setIsMenuOpen(false);
+                document.querySelector(".profile_dropdown_guest").classList.remove("active");
+                document.querySelector(".profile_dropdown_user").classList.remove("active");
+            }
+        };
+
+        document.addEventListener("mousedown", checkIfClickedOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickedOutside);
+        };
+    }, [isMenuOpen]);
 
     function toggleMenu() {
         let menuToToggle = null;
@@ -27,54 +57,8 @@ const NavBar = () => {
             setIsMenuOpen(true);
             menuToToggle.classList.toggle("active");
         }
-    }
 
-    useEffect(() => {
-        const checkIfClickedOutside = (e) => {
-            if (
-                e.target.id === "profile_dropdown" ||
-                e.target.id === "drop1" ||
-                e.target.id === "drop2" ||
-                e.target.id === "drop3" ||
-                e.target.id === "drop4"
-            ) {
-                return;
-            } else {
-                setIsMenuOpen(false);
-                document.querySelector(".profile_dropdown").classList.remove("active");
-            }
-        };
-
-        document.addEventListener("mousedown", checkIfClickedOutside);
-
-        return () => {
-            document.removeEventListener("mousedown", checkIfClickedOutside);
-        };
-    }, [isMenuOpen]);
-
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [logModalIsOpen, setLogModalIsOpen] = useState(false);
-
-    const user = useSelector((state) => state.session.user);
-    const history = useHistory();
-
-    let logButton = null;
-    let dropdownMenu = null;
-
-    function openProfileModal() {
-        setModalIsOpen(true);
-    }
-
-    function closeProfileModal() {
-        setModalIsOpen(false);
-    }
-
-    function openLogModal() {
-        setLogModalIsOpen(true);
-    }
-
-    function closeLogModal() {
-        setLogModalIsOpen(false);
+        showButton();
     }
 
     const showButton = () => {
@@ -101,6 +85,44 @@ const NavBar = () => {
         }
     };
 
+    const testDropdown = () => {
+        if (user?.id) {
+            dropdownMenu = (
+                <div className="profile_dropdown_user">
+                    <button
+                        id="drop3"
+                        className="navbar_modal_link"
+                        onClick={() => history.push("/library")}
+                    >
+                        Library
+                    </button>
+                    <LogoutButton />
+                </div>
+            );
+        } else {
+            <div className="profile_dropdown_guest">
+                <NavLink
+                    id="drop4"
+                    to="/login"
+                    exact={true}
+                    activeClassName="active"
+                    className="navbar_modal_link"
+                >
+                    Log In
+                </NavLink>
+                <NavLink
+                    id="drop5"
+                    to="/sign-up"
+                    exact={true}
+                    activeClassName="active"
+                    className="navbar_modal_link"
+                >
+                    Sign Up
+                </NavLink>
+            </div>;
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="navbar_div">
@@ -112,19 +134,35 @@ const NavBar = () => {
                     {logButton}
                 </ul>
             </div>
-            <div className="profile_dropdown_user">
+            {/* <div className="profile_dropdown_user">
                 <button id="drop3" className="navbar_modal_link" onClick={() => history.push("/library")}>
                     Library
                 </button>
                 <LogoutButton />
             </div>
             <div className="profile_dropdown_guest">
-                <NavLink to="/login" exact={true} activeClassName="active" className="navbar_modal_link">
+                <NavLink
+                    id="drop4"
+                    to="/login"
+                    exact={true}
+                    activeClassName="active"
+                    className="navbar_modal_link"
+                >
                     Log In
                 </NavLink>
-                <NavLink to="/sign-up" exact={true} activeClassName="active" className="navbar_modal_link">
+                <NavLink
+                    id="drop5"
+                    to="/sign-up"
+                    exact={true}
+                    activeClassName="active"
+                    className="navbar_modal_link"
+                >
                     Sign Up
                 </NavLink>
+        </div> */}
+            <div className="profile_dropdown_user">
+                {testDropdown()}
+                {dropdownMenu}
             </div>
         </nav>
     );
