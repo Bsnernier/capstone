@@ -68,11 +68,45 @@ const NavBar = () => {
                     {user.username}
                 </button>
             );
+            dropdownMenu = (
+                <div className="profile_dropdown_user">
+                    <button
+                        id="drop3"
+                        className="navbar_modal_link"
+                        onClick={() => history.push("/library")}
+                    >
+                        Library
+                    </button>
+                    <LogoutButton />
+                </div>
+            );
         } else if (!user?.id) {
             logButton = (
                 <button id="drop2" className="navbar_profile" onClick={toggleMenu}>
                     Log In / Sign Up
                 </button>
+            );
+            dropdownMenu = (
+                <div className="profile_dropdown_guest">
+                    <NavLink
+                        id="drop4"
+                        to="/login"
+                        exact={true}
+                        activeClassName="active"
+                        className="navbar_modal_link"
+                    >
+                        Log In
+                    </NavLink>
+                    <NavLink
+                        id="drop5"
+                        to="/sign-up"
+                        exact={true}
+                        activeClassName="active"
+                        className="navbar_modal_link"
+                    >
+                        Sign Up
+                    </NavLink>
+                </div>
             );
         }
     };
@@ -100,26 +134,28 @@ const NavBar = () => {
                 </div>
             );
         } else {
-            <div className="profile_dropdown_guest">
-                <NavLink
-                    id="drop4"
-                    to="/login"
-                    exact={true}
-                    activeClassName="active"
-                    className="navbar_modal_link"
-                >
-                    Log In
-                </NavLink>
-                <NavLink
-                    id="drop5"
-                    to="/sign-up"
-                    exact={true}
-                    activeClassName="active"
-                    className="navbar_modal_link"
-                >
-                    Sign Up
-                </NavLink>
-            </div>;
+            dropdownMenu = (
+                <div className="profile_dropdown_guest">
+                    <NavLink
+                        id="drop4"
+                        to="/login"
+                        exact={true}
+                        activeClassName="active"
+                        className="navbar_modal_link"
+                    >
+                        Log In
+                    </NavLink>
+                    <NavLink
+                        id="drop5"
+                        to="/sign-up"
+                        exact={true}
+                        activeClassName="active"
+                        className="navbar_modal_link"
+                    >
+                        Sign Up
+                    </NavLink>
+                </div>
+            );
         }
     };
 
