@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
 import { useSelector } from "react-redux";
-import Modal from "react-modal";
 
 import logo from "../../resources/gg_large_rings.gif";
 import "./NavBar.css";
