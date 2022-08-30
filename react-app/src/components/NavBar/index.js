@@ -40,21 +40,24 @@ const NavBar = () => {
     }, [isMenuOpen]);
 
     function toggleMenu() {
-        let menuToToggle = null;
+        let dropdownToToggle = null;
+        let menuToToggle = document.querySelector(".navbar_profile");
         if (switchDropdownOptions) {
-            menuToToggle = document.querySelector(".profile_dropdown_guest");
+            dropdownToToggle = document.querySelector(".navbar_profile");
         } else {
-            menuToToggle = document.querySelector(".profile_dropdown_user");
+            dropdownToToggle = document.querySelector(".navbar_profile");
         }
+
+        console.log("menutotoggle", menuToToggle);
 
         if (isMenuOpen) {
             switchDropdownOptions();
             setIsMenuOpen(false);
-            menuToToggle.classList.toggle("active");
+            dropdownToToggle.classList.toggle("active");
         } else {
             switchDropdownOptions();
             setIsMenuOpen(true);
-            menuToToggle.classList.toggle("active");
+            dropdownToToggle.classList.toggle("active");
         }
 
         showButton();
