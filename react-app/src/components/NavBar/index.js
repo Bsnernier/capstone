@@ -42,13 +42,17 @@ const NavBar = () => {
     function toggleMenu() {
         let dropdownToToggle = null;
         let menuToToggle = document.querySelector(".navbar_profile");
-        if (switchDropdownOptions) {
+        if (switchDropdownOptions()) {
+            console.log("test");
+
             dropdownToToggle = document.querySelector(".profile_dropdown_user");
         } else {
-            dropdownToToggle = document.querySelector(".navbar_profile");
+            dropdownToToggle = document.querySelector(".profile_dropdown_guest");
         }
 
         console.log("switchDropdownOptions", switchDropdownOptions());
+
+        console.log("dropdownToToggle", dropdownToToggle);
 
         if (isMenuOpen) {
             switchDropdownOptions();
@@ -121,46 +125,6 @@ const NavBar = () => {
         }
     };
 
-    const testDropdown = () => {
-        if (user?.id) {
-            dropdownMenu = (
-                <div className="profile_dropdown_user">
-                    <button
-                        id="drop3"
-                        className="navbar_modal_link"
-                        onClick={() => history.push("/library")}
-                    >
-                        Library
-                    </button>
-                    <LogoutButton />
-                </div>
-            );
-        } else {
-            dropdownMenu = (
-                <div className="profile_dropdown_guest">
-                    <NavLink
-                        id="drop4"
-                        to="/login"
-                        exact={true}
-                        activeClassName="active"
-                        className="navbar_modal_link"
-                    >
-                        Log In
-                    </NavLink>
-                    <NavLink
-                        id="drop5"
-                        to="/sign-up"
-                        exact={true}
-                        activeClassName="active"
-                        className="navbar_modal_link"
-                    >
-                        Sign Up
-                    </NavLink>
-                </div>
-            );
-        }
-    };
-
     return (
         <nav className="navbar">
             <div className="navbar_div">
@@ -172,33 +136,6 @@ const NavBar = () => {
                     {logButton}
                 </ul>
             </div>
-            {/* <div className="profile_dropdown_user">
-                <button id="drop3" className="navbar_modal_link" onClick={() => history.push("/library")}>
-                    Library
-                </button>
-                <LogoutButton />
-            </div>
-            <div className="profile_dropdown_guest">
-                <NavLink
-                    id="drop4"
-                    to="/login"
-                    exact={true}
-                    activeClassName="active"
-                    className="navbar_modal_link"
-                >
-                    Log In
-                </NavLink>
-                <NavLink
-                    id="drop5"
-                    to="/sign-up"
-                    exact={true}
-                    activeClassName="active"
-                    className="navbar_modal_link"
-                >
-                    Sign Up
-                </NavLink>
-        </div> */}
-            {testDropdown()}
             {dropdownMenu}
         </nav>
     );
