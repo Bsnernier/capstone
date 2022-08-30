@@ -46,18 +46,12 @@ const NavBar = () => {
 
     function toggleMenu() {
         let dropdownToToggle = null;
-        let menuToToggle = document.querySelector(".navbar_profile");
-        if (switchDropdownOptions()) {
-            console.log("test");
 
+        if (switchDropdownOptions()) {
             dropdownToToggle = document.querySelector(".profile_dropdown_user");
         } else {
             dropdownToToggle = document.querySelector(".profile_dropdown_guest");
         }
-
-        console.log("switchDropdownOptions", switchDropdownOptions());
-
-        console.log("dropdownToToggle", dropdownToToggle);
 
         if (isMenuOpen) {
             switchDropdownOptions();
