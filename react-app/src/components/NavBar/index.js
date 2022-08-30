@@ -26,9 +26,14 @@ const NavBar = () => {
             ) {
                 return;
             } else {
-                setIsMenuOpen(false);
-                document.querySelector(".profile_dropdown_guest").classList.remove("active");
-                document.querySelector(".profile_dropdown_user").classList.remove("active");
+                if (isMenuOpen) {
+                    setIsMenuOpen(false);
+                    if (document.querySelector(".profile_dropdown_guest")) {
+                        document.querySelector(".profile_dropdown_guest").classList.remove("active");
+                    } else {
+                        document.querySelector(".profile_dropdown_user").classList.remove("active");
+                    }
+                }
             }
         };
 
