@@ -16,7 +16,7 @@ const LogoutButton = () => {
     };
 
     return (
-        <button id="drop4" className="navbar_modal_link" onClick={onLogout}>
+        <button id="drop4" className="navbar_modal_link bottom" onClick={onLogout}>
             Logout
         </button>
     );

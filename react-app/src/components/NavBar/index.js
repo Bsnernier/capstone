@@ -77,7 +77,7 @@ const NavBar = () => {
                 <div className="profile_dropdown_user">
                     <button
                         id="drop3"
-                        className="navbar_modal_link"
+                        className="navbar_modal_link top"
                         onClick={() => history.push("/library")}
                     >
                         Library
@@ -98,7 +98,7 @@ const NavBar = () => {
                         to="/login"
                         exact={true}
                         activeClassName="active"
-                        className="navbar_modal_link"
+                        className="navbar_modal_link guest_modal_link top"
                     >
                         Log In
                     </NavLink>
@@ -107,7 +107,7 @@ const NavBar = () => {
                         to="/sign-up"
                         exact={true}
                         activeClassName="active"
-                        className="navbar_modal_link"
+                        className="navbar_modal_link guest_modal_link bottom"
                     >
                         Sign Up
                     </NavLink>
