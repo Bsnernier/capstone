@@ -202,11 +202,11 @@
 .profile_dropdown_user {
     position: absolute;
     /* top: 120px; */
-    right: -10px;
+    right: 30px;
     /* padding: 10px 20px; */
-    background: #fff;
-    width: 230px;
-    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    /* background: #fff; */
+    /* width: 230px; */
+    box-sizing: 0px 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     visibility: hidden;
     opacity: 0;
@@ -215,30 +215,31 @@
 .profile_dropdown_guest {
     position: absolute;
     /* top: 120px; */
-    right: -10px;
+    right: 30px;
     /* padding: 10px 20px; */
-    background: #fff;
-    width: 230px;
-    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    /* background: #fff; */
+    /* width: 230px; */
+    box-sizing: 0px 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     visibility: hidden;
     opacity: 0;
 }
 
 .profile_dropdown_user.active {
-    top: 40px;
+    top: 80px;
     visibility: visible;
     /* -moz-box-shadow: 0 0 3px #ccc;
     -webkit-box-shadow: 0 0 3px #ccc; */
-    box-shadow: 0 0 10px rgb(200, 200, 200);
+    box-shadow: 0px 0px 10px rgb(200, 200, 200);
     opacity: 1;
+    z-index: 100;
 }
 
-.profile_dropdown_guest.active {
+.profile_dropdown_guest .active {
     top: 40px;
     visibility: visible;
     /* -moz-box-shadow: 0 0 3px #ccc;
     -webkit-box-shadow: 0 0 3px #ccc; */
-    box-shadow: 0 0 10px rgb(200, 200, 200);
+    box-shadow: 0px 0px 10px rgb(200, 200, 200);
     opacity: 1;
 }

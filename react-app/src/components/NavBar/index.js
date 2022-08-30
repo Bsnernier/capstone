@@ -43,12 +43,12 @@ const NavBar = () => {
         let dropdownToToggle = null;
         let menuToToggle = document.querySelector(".navbar_profile");
         if (switchDropdownOptions) {
-            dropdownToToggle = document.querySelector(".navbar_profile");
+            dropdownToToggle = document.querySelector(".profile_dropdown_user");
         } else {
             dropdownToToggle = document.querySelector(".navbar_profile");
         }
 
-        console.log("menutotoggle", menuToToggle);
+        console.log("switchDropdownOptions", switchDropdownOptions());
 
         if (isMenuOpen) {
             switchDropdownOptions();
@@ -198,10 +198,8 @@ const NavBar = () => {
                     Sign Up
                 </NavLink>
         </div> */}
-            <div className="profile_dropdown_user">
-                {testDropdown()}
-                {dropdownMenu}
-            </div>
+            {testDropdown()}
+            {dropdownMenu}
         </nav>
     );
 };
