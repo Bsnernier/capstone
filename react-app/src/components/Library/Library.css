@@ -15,7 +15,6 @@
 .lib_games_container {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     flex-wrap: wrap;
     background-color: rgb(0, 0, 0, 0);
 }
