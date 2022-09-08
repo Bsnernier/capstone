@@ -1,70 +1,69 @@
 .review {
-  border: 5px solid black;
-  width: 1000px;
-  margin: 0px;
+    border: 5px solid black;
+    width: 1000px;
+    margin: 0px;
 }
 
 .review_rating {
-  background-color: rgb(47, 41, 49);
+    background-color: rgb(47, 41, 49);
 }
 
 .review_content {
-  border: 5px solid rgb(90, 79, 94);
-  background-color: rgb(47, 41, 49);
-  padding: 5px;
+    border: 5px solid rgb(90, 79, 94);
+    background-color: rgb(47, 41, 49);
+    padding: 5px;
 }
 
 .review_date {
-  display: flex;
-  /* justify-content: flex-end; */
-  align-items: center;
-  padding-top: 2px;
-  margin: 5px;
-  font-size: 12px;
-  background-color: rgb(47, 41, 49);
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+    margin: 5px;
+    font-size: 12px;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_username {
-  width: auto;
-  font-size: 25px;
-  background-color: rgb(47, 41, 49);
+    width: auto;
+    font-size: 25px;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_text {
-  font-size: 20px;
-  padding-left: 10px;
-  inline-size: 960px;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  background-color: rgb(47, 41, 49);
+    font-size: 20px;
+    padding-left: 10px;
+    inline-size: 960px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_user_rating {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(47, 41, 49);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_date_and_buttons {
-  display: flex;
-  justify-content: space-between;
-  margin: 3px;
-  background-color: rgb(47, 41, 49);
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin: 3px;
-  background-color: rgb(47, 41, 49);
+    display: flex;
+    justify-content: flex-end;
+    margin: 3px;
+    background-color: rgb(47, 41, 49);
 }
 
 .review_button {
-  background-color: rgb(90, 79, 94);
-  margin: 3px;
-  cursor: pointer;
+    background-color: rgb(90, 79, 94);
+    margin: 3px;
+    cursor: pointer;
 }
 
 .review_delete_form {
-  background-color: rgb(90, 79, 94, 0);
+    background-color: rgb(90, 79, 94, 0);
 }
